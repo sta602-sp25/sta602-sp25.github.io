@@ -5,19 +5,8 @@ title: |
 subtitle: "Spring 2025"
 # mainfont: Lato
 format:
-  html: default
-# include-in-header:
-#   - text: |
-#       <style>
-#       h1 {
-#         text-align: center;
-#       }
-#       </style>
-# pdf: default
-# format: 
-#    html: 
-#     page-layout: full
-#     toc: true
+  html: 
+    page-layout: full
 ---
 
 # Syllabus

@@ -3,7 +3,8 @@ title: "Exam notes"
 mainfont: Lato
 format: 
   html:
-    toc: true
+    toc: false
+    page-layout: full
 ---
 
 ## Useful distributions
