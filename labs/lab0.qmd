@@ -44,7 +44,7 @@ To write a LaTeX equation within your markdown document, simply use `$$` to surr
 Example: copy and paste the following and then render.
 
 ```
-We can see that $\beta_0 = 2 and \beta_1 = 3$ is the OLS solution under our model
+We can see that $\beta_0 = 2$ and $\beta_1 = 3$ is the OLS solution under our model
 
 $$
 y = \beta_0 + \beta_1 x
