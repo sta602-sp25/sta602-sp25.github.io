@@ -1,5 +1,5 @@
 ---
-title: "MLEs and MAPs"
+title: "Maximum likelihood estimator"
 # date: "September 11, 2023"
 format: 
     revealjs:
@@ -179,36 +179,89 @@ n \hat{\mu} &= \sum_i x_i\\
 \hat{\mu} &= \bar{x}
 \end{aligned}
 $$
-# MAP
 
-## Maximum a posteriori probability (MAP)
+## Exercise: binomial MLE
 
-In Bayesian inference, we wish to find the mode of the **posterior**, not the likelihood.
+Let $Y_1, Y_2,  \ldots, Y_n \sim \text{iid } \text{binary}(\theta)$. Here $\theta$ is the probability of a success, i.e. $prob(Y_i = 1)$. 
 
-To find the posterior mode, $\hat{\theta}$, we instead take the derivative of the *log-posterior*,
+- Note: a "binary" distribution is equivalent to a "Bernoulli" distribution. Your book calls it "binary", so we will as well for consistency.
+
+1. Write down the likelihood, $p(y_1, \ldots, y_n | \theta)$.
+
+2. Write down the log-likelihood.
+
+3. Compute $\hat{\theta}_{MLE} = \text{argmax}_{\theta}~ \log p(y_1, \ldots, y_n | \theta)$
+}
+
+## Solution
+
+::: panel-tabset
+## solution 1
 
 $$
-\frac{d}{d\theta} \log p(\theta | y) = 0
+\begin{aligned}
+p(y_1, \ldots, y_n | \theta) &= \prod_{i=1}^n p(y_i | \theta)\\
+&= \theta^{y_i}(1-\theta)^{1-y_i}\\
+&= \theta^{\sum {y_i}}(1-\theta)^{n - \sum y_i}
+\end{aligned}
 $$
 
-### Practice exercise
-
-As [in class](/notes/lec02-estimation.html), let
+## solution 2
 
 $$
-Y | \theta \sim \text{binomial}(n, \theta)\\
-\theta \sim \text{beta}(a, b)
+\log \left(\theta^{\sum {y_i}}(1-\theta)^{n - \sum y_i} \right) = 
+n \bar{y} \log \theta + n(1-\bar{y}) \log(1 - \theta)
 $$
 
-1. Find the closed-form solution for the posterior mode $\hat{\theta}$.
+where $\bar{y} = \frac{1}{n} \sum_{i=1}^n y_i$.
 
-2. Recreate Figure 1 [from class](/notes/estimation1.html) using the *same data* `flips` provided below but change the prior to $\theta \sim \text{beta}(2, 2)$.
+## solution 3
 
-```{r}
-set.seed(3)
-flips = rbinom(5000, size = 1, prob = 0.25)
-```
+Take the derivative 
+$$
+\begin{aligned}
+\frac{d}{d\theta} \log p(y_1, \ldots, y_n | \theta) &=
+\frac{n\bar{y}}{\theta} - \frac{n - n\bar{y})}{1- \theta}
+\end{aligned}
+$$
+
+and set equal to 0. After simplifying, 
+
+$$
+\hat{\theta}_{MLE} = \bar{y}
+$$
+:::
+
+<!-- # MAP -->
+
+<!-- ## Maximum a posteriori probability (MAP) -->
+
+<!-- In Bayesian inference, we wish to find the mode of the **posterior**, not the likelihood. -->
+
+<!-- To find the posterior mode, $\hat{\theta}$, we instead take the derivative of the *log-posterior*, -->
+
+<!-- $$ -->
+<!-- \frac{d}{d\theta} \log p(\theta | y) = 0 -->
+<!-- $$ -->
+
+<!-- ### Practice exercise -->
+
+<!-- As [in class](/notes/lec02-estimation.html), let -->
+
+<!-- $$ -->
+<!-- Y | \theta \sim \text{binomial}(n, \theta)\\ -->
+<!-- \theta \sim \text{beta}(a, b) -->
+<!-- $$ -->
+
+<!-- 1. Find the closed-form solution for the posterior mode $\hat{\theta}$. -->
+
+<!-- 2. Recreate Figure 1 [from class](/notes/estimation1.html) using the *same data* `flips` provided below but change the prior to $\theta \sim \text{beta}(2, 2)$. -->
+
+<!-- ```{r} -->
+<!-- set.seed(3) -->
+<!-- flips = rbinom(5000, size = 1, prob = 0.25) -->
+<!-- ``` -->
 
 
-3. Add a red vertical line to each subplot that shows the MAP estimate under the prior $\theta \sim \text{beta}(2, 2)$.
+<!-- 3. Add a red vertical line to each subplot that shows the MAP estimate under the prior $\theta \sim \text{beta}(2, 2)$. -->
 

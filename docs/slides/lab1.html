@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.0.38">
 
-  <title>STA602 - MLEs and MAPs</title>
+  <title>STA602 - Maximum likelihood estimator</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -384,7 +384,7 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">MLEs and MAPs</h1>
+  <h1 class="title">Maximum likelihood estimator</h1>
   <p class="institute">STA602 at Duke University</p>
 </section>
 
@@ -529,36 +529,75 @@ n \hat{\mu} &amp;= \sum_i x_i\\
 \end{aligned}
 \]</span></p>
 </div>
-</section></section>
-<section>
-<section id="map" class="title-slide slide level1 center">
-<h1>MAP</h1>
-
 </section>
-<section id="maximum-a-posteriori-probability-map" class="slide level2">
-<h2>Maximum a posteriori probability (MAP)</h2>
-<p>In Bayesian inference, we wish to find the mode of the <strong>posterior</strong>, not the likelihood.</p>
-<p>To find the posterior mode, <span class="math inline">\(\hat{\theta}\)</span>, we instead take the derivative of the <em>log-posterior</em>,</p>
-<p><span class="math display">\[
-\frac{d}{d\theta} \log p(\theta | y) = 0
-\]</span></p>
-<h3 id="practice-exercise">Practice exercise</h3>
-<p>As <a href="../notes/lec02-estimation.html">in class</a>, let</p>
-<p><span class="math display">\[
-Y | \theta \sim \text{binomial}(n, \theta)\\
-\theta \sim \text{beta}(a, b)
-\]</span></p>
+<section id="exercise-binomial-mle" class="slide level2">
+<h2>Exercise: binomial MLE</h2>
+<p>Let <span class="math inline">\(Y_1, Y_2, \ldots, Y_n \sim \text{iid } \text{binary}(\theta)\)</span>. Here <span class="math inline">\(\theta\)</span> is the probability of a success, i.e.&nbsp;<span class="math inline">\(prob(Y_i = 1)\)</span>.</p>
+<ul>
+<li>Note: a “binary” distribution is equivalent to a “Bernoulli” distribution. Your book calls it “binary”, so we will as well for consistency.</li>
+</ul>
 <ol type="1">
-<li><p>Find the closed-form solution for the posterior mode <span class="math inline">\(\hat{\theta}\)</span>.</p></li>
-<li><p>Recreate Figure 1 <a href="../notes/estimation1.html">from class</a> using the <em>same data</em> <code>flips</code> provided below but change the prior to <span class="math inline">\(\theta \sim \text{beta}(2, 2)\)</span>.</p></li>
+<li><p>Write down the likelihood, <span class="math inline">\(p(y_1, \ldots, y_n | \theta)\)</span>.</p></li>
+<li><p>Write down the log-likelihood.</p></li>
+<li><p>Compute <span class="math inline">\(\hat{\theta}_{MLE} = \text{argmax}_{\theta}~ \log p(y_1, \ldots, y_n | \theta)\)</span> }</p></li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">set.seed</span>(<span class="dv">3</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>flips <span class="ot">=</span> <span class="fu">rbinom</span>(<span class="dv">5000</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="solution" class="slide level2">
+<h2>Solution</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">solution 1</a></li><li><a href="#tabset-2-2">solution 2</a></li><li><a href="#tabset-2-3">solution 3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p><span class="math display">\[
+\begin{aligned}
+p(y_1, \ldots, y_n | \theta) &amp;= \prod_{i=1}^n p(y_i | \theta)\\
+&amp;= \theta^{y_i}(1-\theta)^{1-y_i}\\
+&amp;= \theta^{\sum {y_i}}(1-\theta)^{n - \sum y_i}
+\end{aligned}
+\]</span></p>
 </div>
-<ol start="3" type="1">
-<li>Add a red vertical line to each subplot that shows the MAP estimate under the prior <span class="math inline">\(\theta \sim \text{beta}(2, 2)\)</span>.</li>
-</ol>
+<div id="tabset-2-2">
+<p><span class="math display">\[
+\log \left(\theta^{\sum {y_i}}(1-\theta)^{n - \sum y_i} \right) =
+n \bar{y} \log \theta + n(1-\bar{y}) \log(1 - \theta)
+\]</span></p>
+<p>where <span class="math inline">\(\bar{y} = \frac{1}{n} \sum_{i=1}^n y_i\)</span>.</p>
+</div>
+<div id="tabset-2-3">
+<p>Take the derivative</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{d}{d\theta} \log p(y_1, \ldots, y_n | \theta) &amp;=
+\frac{n\bar{y}}{\theta} - \frac{n - n\bar{y})}{1- \theta}
+\end{aligned}
+\]</span></p>
+<p>and set equal to 0. After simplifying,</p>
+<p><span class="math display">\[
+\hat{\theta}_{MLE} = \bar{y}
+\]</span></p>
+</div>
+</div>
+</div>
+<!-- # MAP -->
+<!-- ## Maximum a posteriori probability (MAP) -->
+<!-- In Bayesian inference, we wish to find the mode of the **posterior**, not the likelihood. -->
+<!-- To find the posterior mode, $\hat{\theta}$, we instead take the derivative of the *log-posterior*, -->
+<!-- $$ -->
+<!-- \frac{d}{d\theta} \log p(\theta | y) = 0 -->
+<!-- $$ -->
+<!-- ### Practice exercise -->
+<!-- As [in class](/notes/lec02-estimation.html), let -->
+<!-- $$ -->
+<!-- Y | \theta \sim \text{binomial}(n, \theta)\\ -->
+<!-- \theta \sim \text{beta}(a, b) -->
+<!-- $$ -->
+<!-- 1. Find the closed-form solution for the posterior mode $\hat{\theta}$. -->
+<!-- 2. Recreate Figure 1 [from class](/notes/estimation1.html) using the *same data* `flips` provided below but change the prior to $\theta \sim \text{beta}(2, 2)$. -->
+<!-- ```{r} -->
+<!-- set.seed(3) -->
+<!-- flips = rbinom(5000, size = 1, prob = 0.25) -->
+<!-- ``` -->
+<!-- 3. Add a red vertical line to each subplot that shows the MAP estimate under the prior $\theta \sim \text{beta}(2, 2)$. -->
 
 <div class="footer footer-default">
 <p><a href="https://sta602-sp25.github.io">🔗 sta602-sp25.github.io</a></p>
