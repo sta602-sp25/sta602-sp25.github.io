@@ -26,7 +26,8 @@ Examples
 -   $\phi$ = {} "the empty set"
 -   A = {1, 2, 3}
 -   B = {taken STA199, has not taken STA199}
--   C = {{1,2,3}, {4, 5}}
+-   C = {1, 2, 3, 4, 5}
+-   D = {{1, 2, 3}, {4, 5}}
 :::
 
 ::: callout-note
