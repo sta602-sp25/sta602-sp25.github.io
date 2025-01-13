@@ -191,7 +191,6 @@ Let $Y_1, Y_2,  \ldots, Y_n \sim \text{iid } \text{binary}(\theta)$. Here $\thet
 2. Write down the log-likelihood.
 
 3. Compute $\hat{\theta}_{MLE} = \text{argmax}_{\theta}~ \log p(y_1, \ldots, y_n | \theta)$
-}
 
 ## Solution
 
@@ -221,7 +220,7 @@ Take the derivative
 $$
 \begin{aligned}
 \frac{d}{d\theta} \log p(y_1, \ldots, y_n | \theta) &=
-\frac{n\bar{y}}{\theta} - \frac{n - n\bar{y})}{1- \theta}
+\frac{n\bar{y}}{\theta} - \frac{n - n\bar{y}}{1- \theta}
 \end{aligned}
 $$
 

@@ -1915,13 +1915,13 @@
     "href": "slides/lab1.html#exercise-binomial-mle",
     "title": "Maximum likelihood estimator",
     "section": "Exercise: binomial MLE",
-    "text": "Exercise: binomial MLE\nLet \\(Y_1, Y_2, \\ldots, Y_n \\sim \\text{iid } \\text{binary}(\\theta)\\). Here \\(\\theta\\) is the probability of a success, i.e. \\(prob(Y_i = 1)\\).\n\nNote: a “binary” distribution is equivalent to a “Bernoulli” distribution. Your book calls it “binary”, so we will as well for consistency.\n\n\nWrite down the likelihood, \\(p(y_1, \\ldots, y_n | \\theta)\\).\nWrite down the log-likelihood.\nCompute \\(\\hat{\\theta}_{MLE} = \\text{argmax}_{\\theta}~ \\log p(y_1, \\ldots, y_n | \\theta)\\) }"
+    "text": "Exercise: binomial MLE\nLet \\(Y_1, Y_2, \\ldots, Y_n \\sim \\text{iid } \\text{binary}(\\theta)\\). Here \\(\\theta\\) is the probability of a success, i.e. \\(prob(Y_i = 1)\\).\n\nNote: a “binary” distribution is equivalent to a “Bernoulli” distribution. Your book calls it “binary”, so we will as well for consistency.\n\n\nWrite down the likelihood, \\(p(y_1, \\ldots, y_n | \\theta)\\).\nWrite down the log-likelihood.\nCompute \\(\\hat{\\theta}_{MLE} = \\text{argmax}_{\\theta}~ \\log p(y_1, \\ldots, y_n | \\theta)\\)"
   },
   {
     "objectID": "slides/lab1.html#solution",
     "href": "slides/lab1.html#solution",
     "title": "Maximum likelihood estimator",
     "section": "Solution",
-    "text": "Solution\n\nsolution 1solution 2solution 3\n\n\n\\[\n\\begin{aligned}\np(y_1, \\ldots, y_n | \\theta) &= \\prod_{i=1}^n p(y_i | \\theta)\\\\\n&= \\theta^{y_i}(1-\\theta)^{1-y_i}\\\\\n&= \\theta^{\\sum {y_i}}(1-\\theta)^{n - \\sum y_i}\n\\end{aligned}\n\\]\n\n\n\\[\n\\log \\left(\\theta^{\\sum {y_i}}(1-\\theta)^{n - \\sum y_i} \\right) =\nn \\bar{y} \\log \\theta + n(1-\\bar{y}) \\log(1 - \\theta)\n\\]\nwhere \\(\\bar{y} = \\frac{1}{n} \\sum_{i=1}^n y_i\\).\n\n\nTake the derivative\n\\[\n\\begin{aligned}\n\\frac{d}{d\\theta} \\log p(y_1, \\ldots, y_n | \\theta) &=\n\\frac{n\\bar{y}}{\\theta} - \\frac{n - n\\bar{y})}{1- \\theta}\n\\end{aligned}\n\\]\nand set equal to 0. After simplifying,\n\\[\n\\hat{\\theta}_{MLE} = \\bar{y}\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n🔗 sta602-sp25.github.io"
+    "text": "Solution\n\nsolution 1solution 2solution 3\n\n\n\\[\n\\begin{aligned}\np(y_1, \\ldots, y_n | \\theta) &= \\prod_{i=1}^n p(y_i | \\theta)\\\\\n&= \\theta^{y_i}(1-\\theta)^{1-y_i}\\\\\n&= \\theta^{\\sum {y_i}}(1-\\theta)^{n - \\sum y_i}\n\\end{aligned}\n\\]\n\n\n\\[\n\\log \\left(\\theta^{\\sum {y_i}}(1-\\theta)^{n - \\sum y_i} \\right) =\nn \\bar{y} \\log \\theta + n(1-\\bar{y}) \\log(1 - \\theta)\n\\]\nwhere \\(\\bar{y} = \\frac{1}{n} \\sum_{i=1}^n y_i\\).\n\n\nTake the derivative\n\\[\n\\begin{aligned}\n\\frac{d}{d\\theta} \\log p(y_1, \\ldots, y_n | \\theta) &=\n\\frac{n\\bar{y}}{\\theta} - \\frac{n - n\\bar{y}}{1- \\theta}\n\\end{aligned}\n\\]\nand set equal to 0. After simplifying,\n\\[\n\\hat{\\theta}_{MLE} = \\bar{y}\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n🔗 sta602-sp25.github.io"
   }
 ]
