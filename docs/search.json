@@ -718,21 +718,21 @@
     "href": "notes/lec02-estimation.html#conjugacy",
     "title": "Is this a fair coin?",
     "section": "Conjugacy",
-    "text": "Conjugacy\nIf \\(\\theta \\sim\\) Uniform(0, 1) then \\(p(\\theta)\\) = 1 for all \\(\\theta \\in [0, 1]\\).\nSimilarly, if \\(\\theta \\sim\\) beta(1, 1), then \\(p(\\theta) = 1\\).\nClaim:\nIf\n\\[\n\\begin{aligned}\n\\theta &\\sim \\text{beta}(a, b)\\\\\nY | \\theta &\\sim \\text{binomial}(n, \\theta)\n\\end{aligned}\n\\]\nthen\n\\[\np(\\theta | Y) = \\text{beta}(y + a, n - y + b)\n\\]\n\n\n\n\n\n\nDefinition\n\n\n\nA prior \\(p(\\theta)\\) is said to be conjugate to the data generative model \\(p(y|\\theta)\\) if the family of the posterior is necessarily in the same family as the prior. In math, \\(p(\\theta)\\) is conjugate to \\(p(y|\\theta)\\) if\n\\[\np(\\theta) \\in \\mathcal{P} \\implies p(\\theta | y) \\in \\mathcal{P}\n\\]\n\n\nWhile conjugate priors make calculation easy, they may not accurately reflect our prior beliefs.\n\n\n\n\n\n\nExercise\n\n\n\nProve the claim above."
+    "text": "Conjugacy\nIf \\(\\theta \\sim\\) Uniform(0, 1) then \\(p(\\theta)\\) = 1 for all \\(\\theta \\in [0, 1]\\).\nSimilarly, if \\(\\theta \\sim\\) beta(1, 1), then \\(p(\\theta) = 1\\).\nClaim:\nIf\n\\[\n\\begin{aligned}\n\\theta &\\sim \\text{beta}(a, b)\\\\\nY | \\theta &\\sim \\text{binomial}(n, \\theta)\n\\end{aligned}\n\\]\nthen\n\\[\np(\\theta | Y) = \\text{beta}(y + a, n - y + b)\n\\]\n\n\n\n\n\n\nDefinition\n\n\n\nA prior \\(p(\\theta)\\) is said to be conjugate to the data generative model \\(p(y|\\theta)\\) if the family of the posterior is necessarily in the same family as the prior. In math, \\(p(\\theta)\\) is conjugate to \\(p(y|\\theta)\\) if\n\\[\np(\\theta) \\in \\mathcal{P} \\implies p(\\theta | y) \\in \\mathcal{P}\n\\]\n\n\nWhile conjugate priors make calculation easy, they may not accurately reflect our prior beliefs.\n\nExercise\n\n\nProve the claim above."
   },
   {
     "objectID": "notes/lec02-estimation.html#other-priors",
     "href": "notes/lec02-estimation.html#other-priors",
     "title": "Is this a fair coin?",
     "section": "Other priors",
-    "text": "Other priors\nIncidentally, people are often satisfied with the choice of likelihood but are worried about the choice of prior.\nLet’s examine the effect of another couple of priors.\nGiven the coin’s dubious origin, we might believe a priori that the coin is biased. How could we represent this belief?\n\\[\n\\theta \\sim \\text{beta}(.5, .5)\n\\]\nOr alternatively, we might be strongly believe a priori that the coin is fair. How could we represent this belief?\n\\[\n\\theta \\sim \\text{beta}(20, 20)\n\\]\n\n\n\n\n\n\n\n\n\n\n\nExercise\n\n\n\nHow would you update the code of the previous example to show posterior inference under the prior \\(\\theta \\sim\\) beta(2,3)?"
+    "text": "Other priors\nIncidentally, people are often satisfied with the choice of likelihood but are worried about the choice of prior.\nLet’s examine the effect of another couple of priors.\nGiven the coin’s dubious origin, we might believe a priori that the coin is biased. How could we represent this belief?\n\\[\n\\theta \\sim \\text{beta}(.5, .5)\n\\]\nOr alternatively, we might be strongly believe a priori that the coin is fair. How could we represent this belief?\n\\[\n\\theta \\sim \\text{beta}(20, 20)\n\\]\n\n\n\n\n\n\nExercise\n\n\nHow would you update the code of the previous example to show posterior inference under the prior \\(\\theta \\sim\\) beta(2,3)?"
   },
   {
     "objectID": "notes/lec02-estimation.html#prior-data",
     "href": "notes/lec02-estimation.html#prior-data",
     "title": "Is this a fair coin?",
     "section": "Prior data",
-    "text": "Prior data\nIn the example above, the parameters, a and b, of the conjugate prior are often thought of as prior data.\n\na: “prior number of 1s”\nb: “prior number of 0s”\na + b: “prior sample size”\n\n\n\n\n\n\n\nExercise\n\n\n\nWe saw above that when a = 20 and b = 20, we needed more data to move the posterior.\nShow that the posterior mean, \\(E(\\theta | y) = \\frac{a + y}{a + b + n}\\) converges to the sample average as \\(n \\rightarrow \\infty\\)."
+    "text": "Prior data\nIn the example above, the parameters, a and b, of the conjugate prior are often thought of as prior data.\n\na: “prior number of 1s”\nb: “prior number of 0s”\na + b: “prior sample size”\n\n\nExercise\n\n\nWe saw above that when a = 20 and b = 20, we needed more data to move the posterior.\nShow that the posterior mean, \\(E(\\theta | y) = \\frac{a + y}{a + b + n}\\) converges to the sample average as \\(n \\rightarrow \\infty\\)."
   },
   {
     "objectID": "notes/lec03-Poisson-gamma-exp-families.html",

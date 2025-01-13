@@ -51,9 +51,9 @@ $$
 p(\theta | y) = \frac{p(y|\theta) p(\theta)}{\int_{\theta \in \Theta} p(y|\theta) p(\theta) d\theta}
 $$
 
-::: callout-important
+::: panel-tabset
 ## Exercise
-Label the following on the equation above.
+Label the following on the equation above: *likelihood*, *prior*, *posterior*, *normalizing constant*.
 :::
 
 **Likelihood**: the data generative process. The joint probability (or density) of the data given the parameters of the model. Most often thought of as a function of the *parameter*. Note: *not* a density of the parameter.
@@ -188,7 +188,7 @@ $$
 While conjugate priors make calculation easy, they may not accurately reflect our prior beliefs.
 
 
-::: callout-important
+::: panel-tabset
 ## Exercise
 Prove the claim above.
 :::
@@ -262,7 +262,7 @@ combined + plot_layout(guides = "collect") +
   plot_annotation(title = "Figure 2")
 ```
 
-::: callout-important
+::: panel-tabset
 ## Exercise
 How would you update the code of the previous example to show posterior inference under the prior $\theta \sim$ beta(2,3)?
 :::
@@ -275,7 +275,7 @@ In the example above, the parameters, a and b, of the conjugate prior are often 
 - b: "prior number of 0s"
 - a + b: "prior sample size"
 
-::: callout-important
+::: panel-tabset
 ## Exercise
 We saw above that when a = 20 and b = 20, we needed more data to move the posterior.
 
