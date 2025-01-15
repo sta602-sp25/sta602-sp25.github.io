@@ -1,0 +1,122 @@
+---
+title: "STA602 Bayesian Statistical Modeling and Data Analysis"
+output: pdf_document
+urlcolor: blue
+---
+
+# Syllabus
+
+### Course description
+
+This course introduces Bayesian modeling and inference, motivated by real world examples. Course topics include Bayes' theorem, exchangeability, conjugate priors, Markov chain Monte Carlo (MCMC), Gibbs sampling, Metropolis-Hastings, hierarchical modeling, Bayesian regression and generalized linear models. We compare and contrast Bayesian methods to the frequentist paradigm. By the end of this course students should feel comfortable (1) writing Bayesian models and, when appropriate, (2) sampling from the posterior using MCMC to make inference.
+
+### Logistics
+
+#### Teaching team & office hours
+
+|                      | Contact                                                     | Office hours         | Location              |
+|------------------|------------------|------------------|------------------|
+| Dr. Alexander Fisher | [aaf29@duke.edu](mailto:aaf29@duke.edu)                           | We/Th/Fr: 10:00am-11:00am | Old Chem 223B         |
+| Christine Shen       | [yueming.shen@duke.edu](mailto:yueming.shen@duke.edu) | Mo: 9:30am-11:30am      | Old Chem 203B         |
+| Benedetta Bruni           | [benedetta.bruni@duke.edu](mailto:benedetta.bruni@duke.edu)             | Th: 5:00pm-7:00pm     | Old Chem 203A        |
+| Jaehoan Kim              | [jaehoan.kim@duke.edu](mailto:jaehoan.kim@duke.edu)                 | Mo: 5:00pm-7:00pm    | Old Chem 203B         |
+| Haochen Qin        | [haocheng.qin@duke.edu](mailto:haocheng.qin@duke.edu)                 | We: 3:00pm-5:00pm     | Zoom (link on Canvas) |
+
+#### Meetings
+
+|         |                     |                           |
+|---------|---------------------|---------------------------|
+| Lecture | We/Fr 8:30am - 9:45am | Old Chemistry 116 |
+| Lab 01  | Mo 1:25pm - 2:40pm  | Old Chemistry 201           |
+| Lab 02  | Mo 3:05pm - 4:20pm  | LSRC A156         |
+| Lab 03  | Mo 3:05pm - 4:20pm  | Biological Sciences 154         |
+
+
+Course website: [sta602-sp25.github.io](https://sta602-sp25.github.io/)
+
+<!-- Instructor: Dr. Alexander Fisher   -->
+
+<!-- TA: TBD   -->
+
+<!-- TA: TBD -->
+
+<!-- - Lecture: Monday, Wednesday 3:05-4:20pm in Reuben-Cooke Building 130   -->
+
+<!-- - Lab 01: Thursday 1:25-2:40pm in LSRC A155   -->
+
+<!-- - Lab 02: Thursday 3:05-4:20pm in Old Chem 003 -->
+
+### Course material
+
+-   [A First Course in Bayesian Statistical Methods](https://pdhoff.github.io/book/). As a Duke student, an electronic version of the book is freely available to you on Springer link. Check the errata at the link above.
+
+-   [Chapter summaries](/chapterSummaries.html). I compile major take-away points from each section. Review these to help prepare for exams.
+
+-   We will use the statistical software package R on homework asignments in this course. R is freely available at <http://www.r-project.org/>. RStudio, the popular IDE for R, is freely available at <https://posit.co/downloads/>.
+
+### Schedule of topics
+
+Part I: The Bayesian modeling toolkit
+
+1.  Review of probability
+2.  Conjugate statistical models
+3.  Posterior summaries and Monte Carlo sampling
+4.  Markov chain Monte Carlo (Metropolis-Hastings)
+5.  Semi-conjugate models and Gibbs sampling
+
+Part II: Statistical model building and analysis
+
+1.  Linear regression
+2.  Generalized linear models
+3.  Hierarchical models
+
+### Evaluation
+
+| Assignment       | Description                                                |
+|---------------------------|---------------------------------------------|
+| Homework (40%)   | Individual take-home assignments, submitted to Gradescope. |
+| Midterms (30%)   | Two in-class exams.                                        |
+| Final exam (25%) | Cumulative final during final's week.                      |
+| Quizzes (5%)     | In-class pop quizzes.                                      |
+
+A $>= 93$, A- $< 93$, B+ $< 90$, B $< 87$, B- $< 83$, C+ $<80$, C $< 77$, C- $< 73$, D+ $< 70$, D $< 67$, D- $< 63$, F $< 60$
+
+
+#### A note on quizzes
+
+On random class days, there will be a brief quiz on the previous lectures. If you score $>60\%$ cumulatively on your final quiz grade, you will receive full participation credit. Your lowest **two** quizzes will also be dropped.
+
+
+#### A note on exams
+
+If you miss either midterm 1 or midterm 2, **and have an excused absence**, your missing midterm grade will be replaced by your final exam grade. You must take at least 1 midterm and the final exam to pass the course.
+
+<!-- ::: {.callout-important} -->
+
+<!-- # Late work -->
+
+<!-- Late homework may be submitted with 48 hours of the assignment deadline. Late homework submitted within 24 hours (even 1 minute late) will receive a 5% late penalty. Late work submitted between 24 to 48 hours of the deadline will receive a 10% late penalty. Work submitted after 48 hours will not be accepted. Exams cannot be turned in late and can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time. -->
+
+<!-- ::: -->
+
+### Policies
+
+**Academic integrity**
+
+By enrolling in this course, you commit to upholding Duke's community standard reproduced as follows:
+
+> I will not lie, cheat, or steal in my academic endeavors;
+>
+> I will conduct myself honorably in all my endeavors; and
+>
+> I will act if the Standard is compromised.
+
+Any violations of academic integrity will automatically result in a 0 for the assignment and will be reported to Duke Graduate School for further action. For the Exams and Quizzes, students are required to work alone. For the Homework assignments, students may work with a study group but each student must write up and submit their own answers.
+
+**Late work**
+
+Late homework may be submitted within 48 hours of the assignment deadline. Late homework submitted within 24 hours (even 1 minute late) will receive a 5% late penalty. Late work submitted between 24 to 48 hours of the deadline will receive a 10% late penalty. Work submitted after 48 hours will not be accepted. Exams cannot be turned in late and can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.
+
+**Errors in grading**
+
+Errors in grading must be brought to the attention of the TA or instructor during office hours within 1 week of receiving the grade.

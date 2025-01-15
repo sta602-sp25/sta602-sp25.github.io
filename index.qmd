@@ -69,7 +69,7 @@ schedule %>%
 |      | Fri Jan 10 | intro, history, notation                            |  Ch. 2  |   | [hw 0](/hw/hw00.html)      |
 | 2    | Mon Jan 13 | lab: MLE                                            |         | [💻](/slides/lab1.html)                                           |                            |
 |      | Wed Jan 15 | probability, exchangeability                        |  Ch. 2  |   [🗒](/notes/lec01-probability.html)                                    | [hw 1](/hw/hw01.html)                        |
-|      | Fri Jan 17 | beta-binomial model                                 |  Ch. 3  |                                       |                            |
+|      | Fri Jan 17 | beta-binomial model                                 |  Ch. 3  |  [🗒](/notes/lec02-estimation.html)                                      |                            |
 | 3    | Mon Jan 20 | NO CLASS                                            |         |                                       |                            |
 |      | Wed Jan 22 | Poisson-gamma model, exp families                   |  Ch. 3  |                                       |                            |
 |      | Fri Jan 24 | reliability (conf. intervals, hpd, Laplace approx.) |  Ch. 3  |                                       |                            |
@@ -83,7 +83,7 @@ schedule %>%
 |      | Wed Feb 12 | estimators                                          |         |                                       |                            |
 |      | Fri Feb 14 |                                                     |         |                                       |                            |
 | 7    | Mon Feb 17 |                                                     |         |                                       |                            |
-|      | Wed Feb 19 | Tentative Exam Date                                 |         |                                       |                            |
+|      | Wed Feb 19 | Exam I                                 |         |                                       |                            |
 |      | Fri Feb 21 | Metropolis algorithm                                |         |                                       |                            |
 | 8    | Mon Feb 24 |                                                     |         |                                       |                            |
 |      | Wed Feb 26 | MCMC diagnostics                                    |         |                                       |                            |
@@ -101,7 +101,7 @@ schedule %>%
 |      | Wed Mar 26 | hierarchical modeling                               |         |                                       |                            |
 |      | Fri Mar 28 | review                                              |         |                                       |                            |
 | 13   | Mon Mar 31 |                                                     |         |                                       |                            |
-|      | Wed Apr 02 | Tentative Exam Date                                 |         |                                       |                            |
+|      | Wed Apr 02 | Exam II                                 |         |                                       |                            |
 |      | Fri Apr 04 | model averaging                                     |         |                                       |                            |
 | 14   | Mon Apr 07 |                                                     |         |                                       |                            |
 |      | Wed Apr 09 | Hamiltonian Monte Carlo                             |         |                                       |                            |
