@@ -68,7 +68,7 @@ schedule %>%
 | 1    | Wed Jan 08 | lab: welcome                                        |         |    [💻](/slides/lab0-welcome.html)    | [hello R](/labs/lab0.html) |
 |      | Fri Jan 10 | intro, history, notation                            |  Ch. 2  |   | [hw 0](/hw/hw00.html)      |
 | 2    | Mon Jan 13 | lab: MLE                                            |         | [💻](/slides/lab1.html)                                           |                            |
-|      | Wed Jan 15 | probability, exchangeability                        |  Ch. 2  |   [🗒](/notes/lec01-probability.html)                                    | [hw 1](/hw/hw01.html)                        |
+|      | Wed Jan 15 | probability, exchangeability                        |  Ch. 2  |   [🗒](/notes/lec01-probability.html)  [📝](/notes/probability-exchangeability-v2.pdf)                                  | [hw 1](/hw/hw01.html)                        |
 |      | Fri Jan 17 | beta-binomial model                                 |  Ch. 3  |  [🗒](/notes/lec02-estimation.html)                                      |                            |
 | 3    | Mon Jan 20 | NO CLASS                                            |         |                                       |                            |
 |      | Wed Jan 22 | Poisson-gamma model, exp families                   |  Ch. 3  |                                       |                            |
