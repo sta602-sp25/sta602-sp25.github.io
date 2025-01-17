@@ -78,10 +78,10 @@ $$
 p(y_1,\ldots y_n | \theta) = \prod_{i = 1}^n \frac{(\theta x_i)^{y_i} e^{-\theta x_i}}{y_i!}
 $$
 
-::: callout-important
+::: panel-tabset
 ## Exercise 
 
-What are some assumptions are we making about assists in the data generative model above?
+What assumptions are we making about assists in the data generative model above?
 :::
 
 <!-- 

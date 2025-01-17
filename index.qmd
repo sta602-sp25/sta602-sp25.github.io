@@ -71,7 +71,7 @@ schedule %>%
 |      | Wed Jan 15 | probability, exchangeability                        |  Ch. 2  |   [🗒](/notes/lec01-probability.html)  [📝](/notes/probability-exchangeability-v2.pdf)                                  | [hw 1](/hw/hw01.html)                        |
 |      | Fri Jan 17 | beta-binomial model                                 |  Ch. 3  |  [🗒](/notes/lec02-estimation.html)                                      |                            |
 | 3    | Mon Jan 20 | NO CLASS                                            |         |                                       |                            |
-|      | Wed Jan 22 | Poisson-gamma model, exp families                   |  Ch. 3  |                                       |                            |
+|      | Wed Jan 22 | Poisson-gamma model, exp families                   |  Ch. 3  |  [🗒](notes/lec03-Poisson-gamma-exp-families.html)                                     |                            |
 |      | Fri Jan 24 | reliability (conf. intervals, hpd, Laplace approx.) |  Ch. 3  |                                       |                            |
 | 4    | Mon Jan 27 | lab: exp. families and transformations              |         |                                       |                            |
 |      | Wed Jan 29 | intro to Monte Carlo                                |         |                                       |                            |
