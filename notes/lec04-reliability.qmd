@@ -215,7 +215,7 @@ Taken together, the fitted Gaussian with a mean equal to the posterior mode is c
 
 - Let's derive the Laplace approximation offline
 
-::: callout-important
+::: panel-tabset
 ## Exercise
 For the beta-binomial model above,  compute the Laplace approximation.
 ::: 
