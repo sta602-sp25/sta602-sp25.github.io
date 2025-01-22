@@ -57,7 +57,7 @@ Let $Y_1, \ldots Y_n$ be binary random variables that are conditionally independ
 
 a. Let $y_1, \ldots y_n$ be a binary sequence so that $y_i \in \{0, 1 \}$, for each $i = 1, \ldots, n$. Using the rules of probability, derive a formula for $Pr(Y_1 = y_1, \ldots, Y_n = y_n | \theta)$ as a function of $y_1, \ldots y_n$ and $\theta$. Simplify as much as possible.
 
-b. Let $X = \sum_{i=1}^n Y_i$, what is the probability $p(X = x | \theta)$ for any $x \in \{0, 1, \ldots n\}$? Explain (in 1-2 sentences) why $n \choose y$ is in the expression.
+b. Let $X = \sum_{i=1}^n Y_i$, what is the probability $p(X = x | \theta)$ for any $x \in \{0, 1, \ldots n\}$? Explain (in 1-2 sentences) why $n \choose x$ is in the expression.
 
 c. Compute and compare, using the definition of expectation and variance: $E(Y_i|\theta)$, $Var(Y_i|\theta)$ to $E(X|\theta)$ and $Var(X|\theta)$. 
 
