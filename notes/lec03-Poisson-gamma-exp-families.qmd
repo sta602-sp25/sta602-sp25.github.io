@@ -180,8 +180,10 @@ $t(y)$ is referred to as the *sufficient statistic*.
 
 If $p(y|\theta)$ belongs in the exponential family, then the conjugate prior is 
 $$
-p(\phi | n_0, t_0) =c(\phi)^{n_0} e^{n_0 t_0 \phi}
+p(\phi | n_0, t_0) = \kappa(n_0, t_0)c(\phi)^{n_0} e^{n_0 t_0 \phi},
 $$
+where $\kappa(n_0, t_0)$ is a normalizing constant. 
+
 :::callout-note
 ## Notes about the prior
 
