@@ -441,7 +441,7 @@ c(\phi) &amp;= \left(\frac{1}{1 + e^{\phi}} \right)
 \]</span></p>
 <h4 id="b">b</h4>
 <p><span class="math display">\[
-p(\phi | n_0, t_0) = \left({1 + e^{\phi}} \right)^{-n_0} e^{n_0 t_0 \phi}
+p(\phi | n_0, t_0) \propto \left({1 + e^{\phi}} \right)^{-n_0} e^{n_0 t_0 \phi}
 \]</span></p>
 </section>
 <section id="ex-2-solution" class="slide level2">
@@ -460,7 +460,7 @@ p(\phi | n_0, t_0) = \left({1 + e^{\phi}} \right)^{-n_0} e^{n_0 t_0 \phi}
 <p>One-line formula: <span class="math inline">\(p_\theta(\theta) = p_{\phi}(f(\theta))|\frac{d\phi}{d\theta}|\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-p(\theta) &amp;= (1-\theta)^{n_0} (\theta/(1-\theta))^{n_0 t_0} \left|\frac{d\phi}{d\theta} \right|\\
+p(\theta) &amp;\propto (1-\theta)^{n_0} (\theta/(1-\theta))^{n_0 t_0} \left|\frac{d\phi}{d\theta} \right|\\
 &amp;= \theta^{n_0 t_0 -1} (1-\theta)^{n_0(1 -t_0) - 1}
 \end{aligned}
 \]</span></p>

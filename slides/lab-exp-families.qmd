@@ -77,7 +77,7 @@ $$
 #### b
 
 $$
-p(\phi | n_0, t_0) = \left({1 + e^{\phi}} \right)^{-n_0} e^{n_0 t_0 \phi}
+p(\phi | n_0, t_0) \propto \left({1 + e^{\phi}} \right)^{-n_0} e^{n_0 t_0 \phi}
 $$
 
 ## Ex 2: solution
@@ -101,7 +101,7 @@ One-line formula: $p_\theta(\theta) = p_{\phi}(f(\theta))|\frac{d\phi}{d\theta}|
 
 $$
 \begin{aligned}
-p(\theta) &= (1-\theta)^{n_0} (\theta/(1-\theta))^{n_0 t_0} \left|\frac{d\phi}{d\theta} \right|\\
+p(\theta) &\propto (1-\theta)^{n_0} (\theta/(1-\theta))^{n_0 t_0} \left|\frac{d\phi}{d\theta} \right|\\
 &= \theta^{n_0 t_0 -1} (1-\theta)^{n_0(1 -t_0) - 1}
 \end{aligned}
 $$
