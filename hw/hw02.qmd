@@ -7,6 +7,9 @@ format:
     toc: true
 ---
 
+:::callout-important
+*Turn in your code used to generate any results and/or plots*
+:::
 
 ## Exercise 1
 
@@ -55,7 +58,7 @@ In this problem, we will examine the posterior distribution of $\theta$ given th
 
 a. Make a plot of $p(\theta)$ for $\theta \in (0, 50)$ as follows: Compute $\theta^{a -1} e^{-b\theta}$ on an evenly-spaced grid of 1000 $\theta$-values from 0 to 50. Put the results of the computation into a vector of length 1000, then divide the vector by its sum. This vector is a discrete pdf that approximates the continuous density $p(\theta)$.
 
-b. Compute the prior expectation $E \theta$ using this discrete approximiation. 
+b. Compute the prior expectation $E \theta$ using this discrete approximation. 
 
 c. The posterior density of $\theta$ may be expressed as $p(\theta | y_1, \ldots y_n) = \tilde{c} p(\theta) p(y_1, \ldots y_n | \theta)$, where $\tilde{c}$ does not depend on $\theta$. As in part (a), make a discrete approximation to $p(\theta | y)$, and plot the results along with $p(\theta)$ and discuss the change from prior to posterior density. Also compare the prior and posterior expectations.
 

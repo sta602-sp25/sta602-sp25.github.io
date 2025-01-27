@@ -186,7 +186,7 @@
     "href": "hw/hw02.html",
     "title": "Homework 2",
     "section": "",
-    "text": "Compute the following integrals using the kernel trick discussed in class.\n\n\\(\\int_{0}^{\\infty} \\sigma^{x-1} e^{-b \\sigma} d\\sigma\\)\n\\(\\int_{0}^1 \\alpha \\theta^{\\alpha} (1 - \\theta)^{\\beta - 1} d\\theta\\)\n\\(\\int_{-\\infty}^\\infty x e^{-(x-3)^2} dx\\)"
+    "text": "Important\n\n\n\nTurn in your code used to generate any results and/or plots"
   },
   {
     "objectID": "hw/hw02.html#exercise-2",
@@ -207,7 +207,7 @@
     "href": "hw/hw02.html#exercise-4",
     "title": "Homework 2",
     "section": "Exercise 4",
-    "text": "Exercise 4\nData from the study described in exercise 3 can be downloaded from the course website using the code provided below.\n\nreadr::read_csv(\"https://sta602-sp25.github.io/data/bird-counts.csv\")\n\nIn this problem, we will examine the posterior distribution of \\(\\theta\\) given these data, under a prior distribution for \\(\\theta\\) having density of the form \\(p(\\theta) = c \\theta^{a-1} e^{-b\\theta}\\), where \\(c\\) is a constant that depends on \\(a\\) and \\(b\\) but not \\(\\theta\\). For this problem, we will set \\(a = 2\\) and \\(b = 1/5\\).\n\nMake a plot of \\(p(\\theta)\\) for \\(\\theta \\in (0, 50)\\) as follows: Compute \\(\\theta^{a -1} e^{-b\\theta}\\) on an evenly-spaced grid of 1000 \\(\\theta\\)-values from 0 to 50. Put the results of the computation into a vector of length 1000, then divide the vector by its sum. This vector is a discrete pdf that approximates the continuous density \\(p(\\theta)\\).\nCompute the prior expectation \\(E \\theta\\) using this discrete approximiation.\nThe posterior density of \\(\\theta\\) may be expressed as \\(p(\\theta | y_1, \\ldots y_n) = \\tilde{c} p(\\theta) p(y_1, \\ldots y_n | \\theta)\\), where \\(\\tilde{c}\\) does not depend on \\(\\theta\\). As in part (a), make a discrete approximation to \\(p(\\theta | y)\\), and plot the results along with \\(p(\\theta)\\) and discuss the change from prior to posterior density. Also compare the prior and posterior expectations.\n\nHint: \\(p(\\theta | y_1,\\ldots y_n)\\) is the kernel of a well-known density. You can use a built in R function to help you create a discrete approximation to \\(p(\\theta | y_1,\\ldots y_n)\\)."
+    "text": "Exercise 4\nData from the study described in exercise 3 can be downloaded from the course website using the code provided below.\n\nreadr::read_csv(\"https://sta602-sp25.github.io/data/bird-counts.csv\")\n\nIn this problem, we will examine the posterior distribution of \\(\\theta\\) given these data, under a prior distribution for \\(\\theta\\) having density of the form \\(p(\\theta) = c \\theta^{a-1} e^{-b\\theta}\\), where \\(c\\) is a constant that depends on \\(a\\) and \\(b\\) but not \\(\\theta\\). For this problem, we will set \\(a = 2\\) and \\(b = 1/5\\).\n\nMake a plot of \\(p(\\theta)\\) for \\(\\theta \\in (0, 50)\\) as follows: Compute \\(\\theta^{a -1} e^{-b\\theta}\\) on an evenly-spaced grid of 1000 \\(\\theta\\)-values from 0 to 50. Put the results of the computation into a vector of length 1000, then divide the vector by its sum. This vector is a discrete pdf that approximates the continuous density \\(p(\\theta)\\).\nCompute the prior expectation \\(E \\theta\\) using this discrete approximation.\nThe posterior density of \\(\\theta\\) may be expressed as \\(p(\\theta | y_1, \\ldots y_n) = \\tilde{c} p(\\theta) p(y_1, \\ldots y_n | \\theta)\\), where \\(\\tilde{c}\\) does not depend on \\(\\theta\\). As in part (a), make a discrete approximation to \\(p(\\theta | y)\\), and plot the results along with \\(p(\\theta)\\) and discuss the change from prior to posterior density. Also compare the prior and posterior expectations.\n\nHint: \\(p(\\theta | y_1,\\ldots y_n)\\) is the kernel of a well-known density. You can use a built in R function to help you create a discrete approximation to \\(p(\\theta | y_1,\\ldots y_n)\\)."
   },
   {
     "objectID": "hw/hw03.html",
@@ -1530,14 +1530,14 @@
     "href": "slides/lab-exp-families.html#ex-1-exponential-family",
     "title": "Exponential families & variable transformation",
     "section": "Ex 1: exponential family",
-    "text": "Ex 1: exponential family\nLet \\(p(y|\\theta) = \\theta^{y}(1-\\theta)^{1-y}\\)\n\nIdentify the transform \\(\\phi = f(\\theta)\\) such that \\(p(y | \\phi)\\) can be written as \\(h(y) c(\\phi) e^{\\phi t(y)}\\). Identify the sufficient statistic \\(t(y)\\), as well as \\(c(\\phi)\\).\nWrite down the prior \\(p(\\phi|n_0, t_0)\\)."
+    "text": "Ex 1: exponential family\nLet \\(p(y|\\theta) = \\theta^{y}(1-\\theta)^{1-y}\\)\n\nIdentify the transform \\(\\phi = f(\\theta)\\) such that \\(p(y | \\phi)\\) can be written as \\(h(y) c(\\phi) e^{\\phi t(y)}\\). Identify the sufficient statistic \\(t(y)\\), as well as \\(c(\\phi)\\).\nWrite down the conjugate prior \\(p(\\phi|n_0, t_0)\\)."
   },
   {
     "objectID": "slides/lab-exp-families.html#ex-2-variable-transform",
     "href": "slides/lab-exp-families.html#ex-2-variable-transform",
     "title": "Exponential families & variable transformation",
     "section": "Ex 2: variable transform",
-    "text": "Ex 2: variable transform\nConfirm that \\(f(\\theta)\\) from the previous exercise is monotonic and invertible. Next, using the one-line formula: \\(p_\\theta(\\theta) = p_{\\phi}(f(\\theta))|\\frac{d\\phi}{d\\theta}|\\), show that the prior, \\(p(\\theta | n_0, t_0)\\) is a beta density.\nTo very the above numerically, sample from \\(p(\\theta | n_0, t_0)\\) using the code below, for some \\(n_0, t_0\\) of your choosing.\ntheta = rbeta(n = 10000, shape1 = n_0 * t_0, shape2 = n_0*(1-t_0)\nNext, transform each sample of the object theta to phi using \\(f(\\theta)\\) as defined in exercise 1.\nFinally, plot a density plot of samples phi and, on the same plot, add \\(p(\\phi | n_0, t_0)\\) from exercise 1, part (c)."
+    "text": "Ex 2: variable transform\nConfirm that \\(f(\\theta)\\) from the previous exercise is monotonic and invertible. Next, using the one-line formula: \\(p_\\theta(\\theta) = p_{\\phi}(f(\\theta))|\\frac{d\\phi}{d\\theta}|\\), show that the prior, \\(p(\\theta | n_0, t_0)\\) is a beta density.\nTo verify the above numerically, sample from \\(p(\\theta | n_0, t_0)\\) using the code below, for some \\(n_0, t_0\\) of your choosing.\ntheta = rbeta(n = 10000, shape1 = n_0 * t_0, shape2 = n_0*(1-t_0)\nNext, transform each sample of the object theta to phi using \\(f(\\theta)\\) as defined in exercise 1.\nFinally, plot a density plot of samples phi and, on the same plot, add \\(p(\\phi | n_0, t_0)\\) from exercise 1."
   },
   {
     "objectID": "slides/lab-exp-families.html#ex-3-another-variable-transform",
@@ -1923,5 +1923,12 @@
     "title": "Preparatory reading: Monte Carlo",
     "section": "",
     "text": "Chapter 4 of Hoff.\nOriginal JASA paper by Metropolis and Ulam (1949), also a pdf can be found on canvas under “files” –> “additional readings”\nhistorical article from Los Alamos National Laboratory"
+  },
+  {
+    "objectID": "hw/hw02.html#exercise-1",
+    "href": "hw/hw02.html#exercise-1",
+    "title": "Homework 2",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nCompute the following integrals using the kernel trick discussed in class.\n\n\\(\\int_{0}^{\\infty} \\sigma^{x-1} e^{-b \\sigma} d\\sigma\\)\n\\(\\int_{0}^1 \\alpha \\theta^{\\alpha} (1 - \\theta)^{\\beta - 1} d\\theta\\)\n\\(\\int_{-\\infty}^\\infty x e^{-(x-3)^2} dx\\)"
   }
 ]

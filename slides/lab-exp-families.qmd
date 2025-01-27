@@ -15,7 +15,7 @@ format:
 Let $p(y|\theta) = \theta^{y}(1-\theta)^{1-y}$
 
 a. Identify the transform $\phi = f(\theta)$ such that $p(y | \phi)$ can be written as $h(y) c(\phi) e^{\phi t(y)}$. Identify the sufficient statistic $t(y)$, as well as $c(\phi)$.
-b. Write down the prior $p(\phi|n_0, t_0)$.
+b. Write down the conjugate prior $p(\phi|n_0, t_0)$.
 
 
 
@@ -23,7 +23,7 @@ b. Write down the prior $p(\phi|n_0, t_0)$.
 
 Confirm that $f(\theta)$ from the previous exercise is monotonic and invertible. Next, using the one-line formula: $p_\theta(\theta) = p_{\phi}(f(\theta))|\frac{d\phi}{d\theta}|$, show that the prior, $p(\theta | n_0, t_0)$ is a beta density.
 
-To very the above numerically, sample from $p(\theta | n_0, t_0)$ using the code below, for some $n_0, t_0$ of your choosing.
+To verify the above numerically, sample from $p(\theta | n_0, t_0)$ using the code below, for some $n_0, t_0$ of your choosing.
 
 ```
 theta = rbeta(n = 10000, shape1 = n_0 * t_0, shape2 = n_0*(1-t_0)
@@ -31,7 +31,7 @@ theta = rbeta(n = 10000, shape1 = n_0 * t_0, shape2 = n_0*(1-t_0)
 
 Next, transform each sample of the object `theta` to `phi` using $f(\theta)$ as defined in exercise 1.
 
-Finally, plot a density plot of samples `phi` and, on the same plot, add $p(\phi | n_0, t_0)$ from exercise 1, part (c).
+Finally, plot a density plot of samples `phi` and, on the same plot, add $p(\phi | n_0, t_0)$ from exercise 1.
 
 ## Ex 3: another variable transform
 

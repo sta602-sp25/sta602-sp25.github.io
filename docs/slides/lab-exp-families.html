@@ -398,16 +398,16 @@
 <p>Let <span class="math inline">\(p(y|\theta) = \theta^{y}(1-\theta)^{1-y}\)</span></p>
 <ol type="a">
 <li>Identify the transform <span class="math inline">\(\phi = f(\theta)\)</span> such that <span class="math inline">\(p(y | \phi)\)</span> can be written as <span class="math inline">\(h(y) c(\phi) e^{\phi t(y)}\)</span>. Identify the sufficient statistic <span class="math inline">\(t(y)\)</span>, as well as <span class="math inline">\(c(\phi)\)</span>.</li>
-<li>Write down the prior <span class="math inline">\(p(\phi|n_0, t_0)\)</span>.</li>
+<li>Write down the conjugate prior <span class="math inline">\(p(\phi|n_0, t_0)\)</span>.</li>
 </ol>
 </section>
 <section id="ex-2-variable-transform" class="slide level2">
 <h2>Ex 2: variable transform</h2>
 <p>Confirm that <span class="math inline">\(f(\theta)\)</span> from the previous exercise is monotonic and invertible. Next, using the one-line formula: <span class="math inline">\(p_\theta(\theta) = p_{\phi}(f(\theta))|\frac{d\phi}{d\theta}|\)</span>, show that the prior, <span class="math inline">\(p(\theta | n_0, t_0)\)</span> is a beta density.</p>
-<p>To very the above numerically, sample from <span class="math inline">\(p(\theta | n_0, t_0)\)</span> using the code below, for some <span class="math inline">\(n_0, t_0\)</span> of your choosing.</p>
+<p>To verify the above numerically, sample from <span class="math inline">\(p(\theta | n_0, t_0)\)</span> using the code below, for some <span class="math inline">\(n_0, t_0\)</span> of your choosing.</p>
 <pre><code>theta = rbeta(n = 10000, shape1 = n_0 * t_0, shape2 = n_0*(1-t_0)</code></pre>
 <p>Next, transform each sample of the object <code>theta</code> to <code>phi</code> using <span class="math inline">\(f(\theta)\)</span> as defined in exercise 1.</p>
-<p>Finally, plot a density plot of samples <code>phi</code> and, on the same plot, add <span class="math inline">\(p(\phi | n_0, t_0)\)</span> from exercise 1, part (c).</p>
+<p>Finally, plot a density plot of samples <code>phi</code> and, on the same plot, add <span class="math inline">\(p(\phi | n_0, t_0)\)</span> from exercise 1.</p>
 </section>
 <section id="ex-3-another-variable-transform" class="slide level2">
 <h2>Ex 3: another variable transform</h2>
