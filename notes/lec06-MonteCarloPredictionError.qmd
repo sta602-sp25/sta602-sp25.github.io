@@ -93,7 +93,7 @@ Suppose
 
 $$
 \begin{aligned}
-Y_i & \sim \text{Poisson}(\theta)\\
+Y_i | \theta & \sim \text{Poisson}(\theta)\\
 \theta & \sim \text{gamma}(2, 1).
 \end{aligned}
 $$
@@ -227,44 +227,47 @@ sd3 = pnorm(3) - pnorm(-3)
 - a `r sd2`% confidence interval can be obtained using $\pm 2\cdot \hat{\sigma}/\sqrt{N}$
 - a `r sd3`% confidence interval can be obtained using $\pm 3\cdot \hat{\sigma}/\sqrt{N}$
 
-### Example
+### Toy example
+
+Let $\phi$ be the random variable of interest. 
+
+Assume the posterior distribution $\phi| data \sim \text{binomial}(20, 0.4)$
 
 ```{r}
-# Let theta be "x" in the code below
 set.seed(123)
 
 # binomial(n, p)
 n = 20
 p = 0.4
 
-# mean, variance, sd of a binomial(n, p)
-EX = n*p # 20*.4 = 8
-VarX = n*p*(1-p) # 20*.4*.6 = 4.8
-sdX = sqrt(VarX) # 2.19089
+# exact posterior mean, variance, sd of a binomial(n, p)
+EPhi = n*p # 20*.4 = 8
+VarPhi = n*p*(1-p) # 20*.4*.6 = 4.8
+sdPhi = sqrt(VarPhi) # 2.19089
 
 # Monte Carlo sample of size N
 N = 100
-xSamples = rbinom(N, size = n, prob = p) 
+PhiSamples = rbinom(N, size = n, prob = p) 
 
-# sample mean, var, sd
-xbar = mean(xSamples)
-xvar = var(xSamples)
-xsigma = sd(xSamples) # = sqrt(sum((xSamples - xbar)^2) / (N -1))
+# Empirical approximation of posterior mean, var, sd
+PhiBar = mean(PhiSamples)
+PhiVar = var(PhiSamples)
+PhiSigma = sd(PhiSamples) # = sqrt(sum((xSamples - xbar)^2) / (N -1))
 
-se = xsigma / sqrt(N)
+se = PhiSigma / sqrt(N)
 
-lb = round(xbar - (2*se), 3)
-ub = round(xbar + (2*se), 3)
+lb = round(PhiBar - (2*se), 3)
+ub = round(PhiBar + (2*se), 3)
 ```
 
-For `r paste("N = ", N)` Monte Carlo samples, The posterior mean of $\theta$ is $\bar{\theta} =$ `r xbar` with 95% confidence interval (`r paste(lb, ub)`).
+For `r paste("N = ", N)` Monte Carlo samples, The posterior mean of $\phi$ is $\bar{\phi} =$ `r PhiBar` with 95% confidence interval (`r paste(lb, ub)`).
 
 ::: panel-tabset
 ## Exercise
 
-Above we estimate $Var(\theta)$ to be `r round(xvar, 3)` and the standard error for $N = 100$ was `r round(se, 3)`.
+Above we estimate $Var(\phi)$ to be `r round(PhiVar, 3)` and the standard error for $N = 100$ was `r round(se, 3)`.
 
-If you wanted to state $p(\theta \in (\hat{\theta} \pm 0.01)) = 0.95$, how large would $N$ have to be? 
+If you wanted to state $p(\phi \in (\hat{\phi} \pm 0.01)) = 0.95$, how large would $N$ have to be? 
 
 Check your answer by adjusting $N$ above.
 :::
