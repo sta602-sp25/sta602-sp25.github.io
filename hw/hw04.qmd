@@ -1,6 +1,6 @@
 ---
 title: "Homework 4"
-subtitle: "Due Friday September 27 at 5:00pm"
+subtitle: "Due Friday February 14 at 5:00pm"
 mainfont: Lato
 format: 
   html:
@@ -17,10 +17,10 @@ p(\theta) = \frac{4}{10}e^{-4\theta} + \frac{9}{10 \Gamma(8)} \theta^7 e^{-\thet
 $$
 a. Make a plot of this prior density and explain what it means, in context, to the biologists.
 
-b. Let $Y_i$ be the number of mutations produced by the $i$th cell, such that
+b. Let $Y_i$ be the number of mutations produced in the $i$th cell, such that
 
 $$
-Y_i | \theta \sim Poisson(\theta)
+Y_i | \theta \sim \text{iid }Poisson(\theta)
 $$
 
 Write out the posterior distribution of $\theta$ given $y_1,\ldots y_n$ (up to a proportionality constant) and simplify as much as possible. Hint: Be careful when writing your proportionality statement!
@@ -49,14 +49,14 @@ Chimowitz et al. (2011) [https://doi.org/10.1056/NEJMoa1105335](https://doi.org/
 ```{r}
 #| eval: false
 #| message: false
-stents = readr::read_csv("https://sta360-fa24.github.io/data/stent365.csv")
+stents = readr::read_csv("https://sta602-sp25.github.io/data/stent365.csv")
 ```
 
 Each row of the data set is an individual patient. The `group` column indicates whether the patient was treated with a stent or not. The `outcome` column reports whether the patient had a stroke or not within a year.
 
-a. Write down a data generative model (possibly as two separate densities) for this data.
+a. Write down a data generative model for this data. Hint: you might write down two data generative models, one for patients in the treatment group and one for patients in the control group.
 
-b. Write down your prior beliefs about unknown parameters in your model above using a conjugate density. Choose parameters for the priors. Explain your choices.
+b. Write down your prior beliefs about unknown parameters in your model above using a conjugate prior. Choose parameters for the priors. Explain your choices.
 
 c. Report (using Monte Carlo sampling or otherwise) the posterior mean of the [relative risk](https://en.wikipedia.org/wiki/Relative_risk), i.e. the posterior mean of the probability of stroke in the treatment group versus in the control, (think $E~[\frac{\theta_t}{\theta_c}~|~\text{data}]$). Additionally, include a 95% posterior confidence interval for the relative risk.
 
