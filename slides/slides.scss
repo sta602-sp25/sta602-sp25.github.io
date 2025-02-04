@@ -4,61 +4,122 @@
 //@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
 
 //$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
-$presentation-heading-color: #2774AE; /* nice blue - Spring 2023 */
+$primary-font : 'Lato';
+$presentation-heading-color: #2774AE;
+$presentation-heading-weight: normal;
 $presentation-title-slide-text-align: "left";
 $link-color: #2774AE;
-$code-block-font-size: 1em;
+$code-block-font-size: 0.9em;
 $code-block-bg: #ECECEC;
-
 /*-- scss:rules --*/
+
+.reveal h1 {
+  font-weight: normal;
+}
+
+.reveal h2 {
+  font-weight: normal;
+}
+
+:root {
+  --r-main-font-size: 30px;
+}
 
 details>summary {
   font-size: 0.75em;
 }
 
+#title-slide .title {
+  font-weight: normal
+}
+
 #title-slide .subtitle {
   color: #000000;
-  font-weight: bold
+  font-weight: normal
 }
 
 #title-slide .author {
-  text-align: left;
+  text-align: right;
 }
 
 #title-slide .institute {
+  text-align: right;
+}
+
+#title-slide .affiliation {
   text-align: left;
 }
+
+.center {
+  text-align: left;
+}
+
+
+.giant {
+  font-size: 2em;
+}
+
+.xlarge {
+  font-size: 1.5em;
+}
+
+.large {
+  font-size: 1.2em;
+}
+
+.medium {
+  font-size: 0.9em;
+}
+
+.msmall {
+  font-size: 0.825em;
+}
+
 
 .small {
   font-size: 0.75em;
 }
 
-.reveal .slide .question {
-  border-left: 3px solid #2774AE;
-  padding-left: 0.5em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  background: #D9E3E4;
+.xsmall {
+  font-size: 0.66em;
 }
 
-.reveal .slide .poll {
-  border-left: 3px solid #fcd06b; /* Pantone Samoan Sun - Fall 2022 */
-  padding-left: 0.5em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  background: #FFEDC2;
+.reveal code {
+  font-size: 0.8em;
 }
 
-.reveal .slide .appex {
-  border-left: 3px solid #1f7349; /* Pantone Amazon - Fall 2022 */
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  padding: 0.5em;
-  background: #EBF7FF;
+.reveal .cell {
+  margin-bottom: 15px;
+}
+
+.reveal table td {
+  border-bottom: 0;
+  padding-top: 2px;
+  padding-bottom: 2px
+}
+
+blockquote > p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+blockquote {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.reveal pre.sourceCode code {
+  max-height: 550px;
 }
 
 .reveal div.sourceCode {
-  border: none;
-  border-radius: 0px;
-  margin-bottom: 10px !important;
+  margin-bottom: 0.33em !important;
+}
+
+.quarto-title-authors {
+  justify-content: center;
+}
+
+blockquote > p {
+  margin-bottom: 0.5em !important;
 }

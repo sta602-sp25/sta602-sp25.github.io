@@ -29,7 +29,7 @@ bass = read_csv("../data/bass.csv")
 
 ```{r}
 #| eval: false
-bass = read_csv("https://sta360-fa24.github.io/data/bass.csv")
+bass = read_csv("https://sta602-sp25.github.io/data/bass.csv")
 ```
 
 ```{r}
@@ -57,7 +57,7 @@ Let $\mu_0 = 0$, $\kappa_0 = 1$.
 
 (c). If you caught a new fish with weight 4kg, what would you predict the mercury content to be? In other words, let x = 4 and compute $E[\tilde{y}|y_1,\ldots, y_n, x = 4]$. Additionally, plot the the posterior predictive density $p(\tilde{y} | y_1, \ldots y_n, x = 4)$.
 
-(d) Critique your model. Hint: compare to the models below:
+(d). Critique your model. Hint: compare to the models below:
 
 ```{r}
 #| eval: false

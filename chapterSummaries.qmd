@@ -106,7 +106,7 @@ A $100 \times (1-\alpha)$% **high posterior density** (HPD) region is a set $s(y
 
 ### Exponential families
 
-If density $p(y|\theta)$ can be written $h(y) c(\phi) e^{\phi t(y)}$ for some transform $\phi = f(\theta)$ we can say $p(y|\theta)$ belongs in the exponential family, and the conjugate prior is $p(\phi | n_0, t_0) =c(\phi)^{n_0} e^{n_0 t_0 \phi}$. Note: the conjugate prior is given over $\phi$ and we'd have to transform back if we care about $p(\theta)$.
+If density $p(y|\theta)$ can be written $h(y) c(\phi) e^{\phi t(y)}$ for some transform $\phi = f(\theta)$ we can say $p(y|\theta)$ belongs in the exponential family, and the conjugate prior is $p(\phi | n_0, t_0) \propto c(\phi)^{n_0} e^{n_0 t_0 \phi}$. Note: the conjugate prior is given over $\phi$ and we'd have to transform back if we care about $p(\theta)$.
 
 ## Chapter 4
 

@@ -1,5 +1,8 @@
-institute: "STA602 at Duke University"
+subtitle: "STA602 at Duke University"
+# institute: "STA602 at Duke University"
+# affiliation: "STA602 at Duke University"
 # author: "Dr. Alexander Fisher"
+# author: "STA602 at Duke University"
 footer: "[🔗 sta602-sp25.github.io](https://sta602-sp25.github.io)"
 # logo: "images/logo.png"
 format:
