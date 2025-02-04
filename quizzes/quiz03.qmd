@@ -12,7 +12,10 @@ $\int p(\tilde{y}|\theta) p(\theta | y_1,\ldots y_n)d\theta$ is a ___ predictive
 
 ### Exercise 2
 
-Expand $p(\theta | y)$ using Bayes' rule (include the normalization constant).
+Assume $Y | \theta \sim \text{Poisson}(\theta)$ and $\theta$ has some prior distribution $p(\theta)$ with positive finite mean and variance.  
+Write $>$, $<$ or $=$ in the blank below:
+
+$Var[Y]$ ____ $Var[\theta]$.
 
 ### Exercise 3
 

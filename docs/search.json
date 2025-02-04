@@ -1313,7 +1313,7 @@
     "href": "quizzes.html",
     "title": "STA 360: Quizzes",
     "section": "",
-    "text": "No matching items"
+    "text": "Quiz 7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBonus quiz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "quizzes/quiz-bonus.html",
@@ -1341,7 +1341,7 @@
     "href": "quizzes/quiz03.html",
     "title": "Quiz 3",
     "section": "",
-    "text": "Exercise 1\nWrite “posterior” or “prior” in the blank below:\n\\(\\int p(\\tilde{y}|\\theta) p(\\theta | y_1,\\ldots y_n)d\\theta\\) is a ___ predictive distribution.\n\n\nExercise 2\nExpand \\(p(\\theta | y)\\) using Bayes’ rule (include the normalization constant).\n\n\nExercise 3\nThe vertical line on the following plot is best described as the posterior ____.\n\n\n\n\n\n\n\n\n\n\n−+\n03:00"
+    "text": "To receive credit for this assignment, write your full name at the top of your paper.\n\nExercise 1\nWrite “posterior” or “prior” in the blank below:\n\\(\\int p(\\tilde{y}|\\theta) p(\\theta | y_1,\\ldots y_n)d\\theta\\) is a ___ predictive distribution.\n\n\nExercise 2\nAssume \\(Y | \\theta \\sim \\text{Poisson}(\\theta)\\) and \\(\\theta\\) has some prior distribution \\(p(\\theta)\\) with positive finite mean and variance.\nWrite \\(&gt;\\), \\(&lt;\\) or \\(=\\) in the blank below:\n\\(Var[Y]\\) ____ \\(Var[\\theta]\\).\n\n\nExercise 3\nThe vertical line on the following plot is best described as the posterior ____.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "quizzes/quiz04.html",
