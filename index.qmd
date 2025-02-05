@@ -65,7 +65,7 @@ schedule %>%
 
 ::: heatMap
 | Week | Date | Topic | Reading | Notes | Assignment |
-|:-----------|:-----------|:-----------|:----------:|:------------:|:-----------|
+|:-----------|:-----------|:-----------|:----------:|:----------:|:-----------|
 | 1 | Wed Jan 08 | lab: welcome |  | [💻](/slides/lab0-welcome.html) | [hello R](/labs/lab0.html) |
 |  | Fri Jan 10 | intro, history, notation | Ch. 2 |  | [hw 0](/hw/hw00.html) |
 | 2 | Mon Jan 13 | lab: MLE |  | [💻](/slides/lab1.html) |  |
@@ -78,10 +78,10 @@ schedule %>%
 |  | Wed Jan 29 | intro to Monte Carlo | [📖](/readings/introMonteCarlo.html) | [🗒](/notes/lec05-introMonteCarlo.html) [📝](/notes/posteriorPredictive.pdf) | [hw 3](/hw/hw03.html) |
 |  | Fri Jan 31 | predictive checks and MC error | Ch. 4 | [🗒](/notes/lec06-MonteCarloPredictionError.html) [📝](/notes/predictive-distributions.pdf) |  |
 | 5 | Mon Feb 03 | lab: mixture densities |  | [💻](/slides/lab-mixtures.html) |  |
-|  | Wed Feb 05 | the normal model | Ch. 5 | [🗒](/notes/lec07-normalModel.html) | [hw 4](/hw/hw04.html) |
-|  | Fri Feb 07 | the normal model II | Ch. 5 |  |  |
+|  | Wed Feb 05 | the normal model | Ch. 5 | [🗒](/notes/lec07-normalModel.html)[📝](/notes/normal-notes-written.pdf) | [hw 4](/hw/hw04.html) |
+|  | Fri Feb 07 | estimators | Ch. 5 | [🗒](/notes/lec14-estimators.html) |  |
 | 6 | Mon Feb 10 | lab: normal data |  |  |  |
-|  | Wed Feb 12 | estimators | Ch. 5 |  |  |
+|  | Wed Feb 12 | priors |  |  |  |
 |  | Fri Feb 14 |  |  |  |  |
 | 7 | Mon Feb 17 |  |  |  |  |
 |  | Wed Feb 19 | Exam I |  |  |  |
