@@ -70,6 +70,10 @@ b. Assume each digit (i.e. each `id`) has its own multinomial data generative mo
   - Write down the joint density for images with id "j", $\prod_{k = 1}^{n_j} p(\mathbf{x}_k^{(j)} | \boldsymbol{\pi}^{(j)})$. Here $n_j$ is the number of images of type $j$ and $\boldsymbol{\pi}^{(j)} = \{\pi_1^{(j)}, \ldots, \pi_{64}^{(j)} \}$
 
   - How many total unknown parameters are in the complete joint density of all images?
+  
+::: callout-note
+Notice that the multinomial sampling model places positive density on $x_i > 16$, which is impossible in our data. This model is overly simple.
+:::
 
 c. The Dirichlet distribution is the multivariate generalization of the beta distribution. You can read more about it [here](https://en.wikipedia.org/wiki/Dirichlet_distribution).  Place a Dirichlet prior on the probability parameters for each of your multinomial models in part b. Let the  concentration parameters be all identically 1.
 

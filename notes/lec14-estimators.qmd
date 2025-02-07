@@ -163,7 +163,7 @@ $$
 
 Suppose you wish to make inference about the average bill length of [Chinstrap penguins](https://allisonhorst.github.io/palmerpenguins/).
 
-You make the modeling assumption that $Y$, the bill length of a penguin is normally distributed, i.e. $Y \sim N(\theta, \sigma^2)$ and you set up a conjugate prior as we've done before.
+You make the modeling assumption that $Y$, the bill length of a penguin is normally distributed, i.e. $Y| \theta, \sigma^2 \sim N(\theta, \sigma^2)$ and you set up a conjugate prior as we've done before.
 
 One can then show that the posterior mean estimator of $\theta$ is
 
@@ -285,10 +285,10 @@ data.frame(x = 1:100) %>%
 
 :::
 
-::: panel-tabset
-## Exercise 5
-Consider the normal model from the previous lecture. Compare the MSE for the least squares estimator $\hat{\beta}_{OLS}$ to the MSE for the ridge estimator $\hat{\beta}_{ridge}$.
-:::
+<!-- ::: panel-tabset -->
+<!-- ## Exercise 5 -->
+<!-- Consider the normal model from the previous lecture. Compare the MSE for the least squares estimator $\hat{\beta}_{OLS}$ to the MSE for the ridge estimator $\hat{\beta}_{ridge}$. -->
+<!-- ::: -->
 
 <!-- ```{r} -->
 <!-- penguins %>% -->

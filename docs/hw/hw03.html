@@ -248,6 +248,19 @@ E~Y^2|\theta &amp;= \frac{a}{\theta^2}
 <li><p>Write down the joint density for images with id “j”, <span class="math inline">\(\prod_{k = 1}^{n_j} p(\mathbf{x}_k^{(j)} | \boldsymbol{\pi}^{(j)})\)</span>. Here <span class="math inline">\(n_j\)</span> is the number of images of type <span class="math inline">\(j\)</span> and <span class="math inline">\(\boldsymbol{\pi}^{(j)} = \{\pi_1^{(j)}, \ldots, \pi_{64}^{(j)} \}\)</span></p></li>
 <li><p>How many total unknown parameters are in the complete joint density of all images?</p></li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice that the multinomial sampling model places positive density on <span class="math inline">\(x_i &gt; 16\)</span>, which is impossible in our data. This model is overly simple.</p>
+</div>
+</div>
 <ol start="3" type="a">
 <li>The Dirichlet distribution is the multivariate generalization of the beta distribution. You can read more about it <a href="https://en.wikipedia.org/wiki/Dirichlet_distribution">here</a>. Place a Dirichlet prior on the probability parameters for each of your multinomial models in part b. Let the concentration parameters be all identically 1.</li>
 </ol>
