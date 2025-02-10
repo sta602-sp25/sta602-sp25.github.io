@@ -270,7 +270,7 @@ $$
 
 - Compute $\hat{\theta}_{MLE}$
 - Compute $\hat{\theta}_{B} = E[\theta | y_1,\ldots y_n]$.
-- Compare $MSE(\hat{\theta}_{MLE})$ to $MSE(\hat{\theta}_{B})$. Under what conditions is the MSE of $\hat{\theta}_B$ smaller?
+- Compare $MSE(\hat{\theta}_{MLE})$ to $MSE(\hat{\theta}_{B})$). Under what conditions is the MSE of $\hat{\theta}_B$ smaller?
 
 <!-- ## Exercise 3: MVN -->
 
@@ -320,7 +320,7 @@ $$
 $$
 \begin{aligned}
 \hat{\theta}_{MLE} &= \bar{Y} = \frac{1}{n}\sum_{i=1}^n Y_i\\
-\hat{\theta}_B &= \frac{n\bar{y}+a}{n+a+b}
+\hat{\theta}_B &= \frac{n\bar{y}+a}{n+a+b} = 
 \end{aligned}
 $$
 
@@ -337,7 +337,7 @@ For the Bayesian estimator to have smaller MSE than the MLE, we need
 $$
 \begin{aligned}
  \left(\frac{a}{a+b} - \theta\right)^2 &\leq \frac{\theta(1 - \theta)}{n} \frac{1 + w}{1 - w}\\
- &\leq \frac{\theta(1 - \theta) (2n + a + b)}{n^2}
+ &\leq \frac{\theta(1 - \theta) (2n + a + b)}{n(a+b)}
  \end{aligned}
 $$
 

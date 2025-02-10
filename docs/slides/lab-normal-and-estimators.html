@@ -692,7 +692,7 @@ MSE(\hat{\theta}_B|\theta) &amp;= \frac{n}{n + a + b}\bar{Y} + \frac{a + b}{n + 
 <p><span class="math display">\[
 \begin{aligned}
 \left(\frac{a}{a+b} - \theta\right)^2 &amp;\leq \frac{\theta(1 - \theta)}{n} \frac{1 + w}{1 - w}\\
-&amp;\leq \frac{\theta(1 - \theta) (2n + a + b)}{n^2}
+&amp;\leq \frac{\theta(1 - \theta) (2n + a + b)}{n(a+b)}
 \end{aligned}
 \]</span></p>
 <p>In words, if our prior guess <span class="math inline">\(a / (a+b)\)</span> is “close enough” to <span class="math inline">\(\theta\)</span>, where “close enough” is defined by the inequality above and is proportional to the variance of the estimator, then the MSE of the Bayesian estimator is smaller.</p>
