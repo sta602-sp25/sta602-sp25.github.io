@@ -81,7 +81,7 @@ schedule %>%
 |  | Wed Feb 05 | the normal model | Ch. 5 | [🗒](/notes/lec07-normalModel.html)[📝](/notes/normal-notes-written.pdf) | [hw 4](/hw/hw04.html) |
 |  | Fri Feb 07 | estimators | Ch. 5 | [🗒](/notes/lec14-estimators.html)[📝](/notes/estimators.pdf) |  |
 | 6 | Mon Feb 10 | lab: normal data & estimators |  | [💻](/slides/lab-normal-and-estimators.html) |  |
-|  | Wed Feb 12 | priors |  | [🗒](/notes/priors.html) |  |
+|  | Wed Feb 12 | priors |  | [🗒](/notes/priors.html)[📝](/notes/Priors-handwritten.pdf) |  |
 |  | Fri Feb 14 | review |  |  |  |
 | 7 | Mon Feb 17 |  |  |  |  |
 |  | Wed Feb 19 | Exam I |  |  |  |
