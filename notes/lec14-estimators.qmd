@@ -188,7 +188,7 @@ Compare $\hat{\theta}_b$ to the estimator $\hat{\theta}_e = \bar{y}$. Compute th
 
 :::panel-tabset
 ## Exercise 4
-Suppose you know that you know Gentoo penguins are closely related to Chinstrap penguins. Previously, you've measured the bill length of three Gentoo penguins and found their mean bill length to be 46.2. Accordingly, you set $\mu_0 = 46.2$.
+Suppose you know Gentoo penguins are closely related to Chinstrap penguins. Previously, you've measured the bill length of three Gentoo penguins and found their mean bill length to be 46.2. Accordingly, you set $\mu_0 = 46.2$.
 
 <!-- # ```{r} -->
 <!-- # set.seed(360) -->
@@ -199,11 +199,11 @@ Suppose you know that you know Gentoo penguins are closely related to Chinstrap 
 <!-- #   pull() -->
 <!-- # ``` -->
 
-Suppose (for illustrative purposes) that you *know* the true population mean and variance for Chinstrap penguin bill length,
+For illustrative purposes, we'll pretend we know the true population mean and variance for Chinstrap penguin bill length
 
 $$
 \begin{aligned}
-\theta_0 &= 48.8\\
+\theta_0 &= 48.5\\
 \sigma^2 &= 3.3.
 \end{aligned}
 $$
@@ -227,7 +227,7 @@ MSE_empirical = function(n) {
 
 MSE_bayesian = function(k0, n) {
   w = n / (k0 + n)
-  (w^2 * sigma2 / n) + (((1-w) * (46.2 - 48.8))^2)
+  (w^2 * sigma2 / n) + (((1-w) * (46.2 - 48.5))^2)
 }
 
 MSE_ratio = function(k0, n) {
@@ -261,7 +261,7 @@ MSE_empirical = function(n) {
 
 MSE_bayesian = function(k0, n) {
   w = n / (k0 + n)
-  (w^2 * sigma2 / n) + (((1-w) * (46.2 - 48.8))^2)
+  (w^2 * sigma2 / n) + (((1-w) * (46.2 - 48.5))^2)
 }
 
 MSE_ratio = function(k0, n) {

@@ -223,7 +223,7 @@ Definition
 <h4 class="anchored" data-anchor-id="example-1">Example:</h4>
 <p><span class="math display">\[
 \begin{aligned}
-Y &amp;\sim N_n(X \beta, \sigma^2 I_n)\\
+Y | \beta, \sigma^2 &amp;\sim N_n(X \beta, \sigma^2 I_n)\\
 \beta &amp;\sim N_p(\beta_0, \Sigma_0)\\
 1/\sigma^2  &amp;\sim \text{gamma}(\nu_0/2, \nu_0/2 \sigma_0^2)
 \end{aligned}
@@ -247,7 +247,7 @@ Y &amp;\sim N_n(X \beta, \sigma^2 I_n)\\
 <ol type="1">
 <li><p>Compute the MLE, <span class="math inline">\(\hat{\theta}_{MLE} = \text{argmax}_{\theta}~ l(\theta|y_1,\ldots,y_n)\)</span>.</p></li>
 <li><p>Compute the negative of the curvature of the log-likelihood: <span class="math inline">\(J(\theta) = - \frac{\partial^2}{\partial \theta^2} l(\theta | y_1,\ldots, y_n)\)</span>.</p></li>
-<li><p>Center the prior on the MLE, and let the curvature of the prior be <span class="math inline">\(- \frac{\partial^2}{\partial \theta^2} p(\theta) = J(\theta) / n\)</span>.</p></li>
+<li><p>Let the max of the prior be the MLE, and let the curvature of the prior be <span class="math inline">\(- \frac{\partial^2}{\partial \theta^2} p(\theta) = J(\theta) / n\)</span>.</p></li>
 </ol>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Exercise</a></li></ul>
@@ -255,7 +255,7 @@ Y &amp;\sim N_n(X \beta, \sigma^2 I_n)\\
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ul>
 <li><p>Let <span class="math inline">\(Y_1,\ldots,Y_n \sim \text{iid binary}(\theta)\)</span>. Find <span class="math inline">\(\hat{\theta}_{MLE}\)</span>.</p></li>
-<li><p>Find the unit information prior <span class="math inline">\(p(\theta)\)</span>. Hint: find a density <span class="math inline">\(p(\theta)\)</span> such that <span class="math inline">\(\log p(\theta) = l(\theta | y_1,\ldots,y_n) + c\)</span> where <span class="math inline">\(c\)</span> is a constant that doesn’t depend on <span class="math inline">\(\theta\)</span>.</p></li>
+<li><p>Find the unit information prior <span class="math inline">\(p(\theta)\)</span>. Hint: find a density <span class="math inline">\(p(\theta)\)</span> such that <span class="math inline">\(\log p(\theta) = l(\theta | y_1,\ldots,y_n)/n + c\)</span> where <span class="math inline">\(c\)</span> is a constant that doesn’t depend on <span class="math inline">\(\theta\)</span>.</p></li>
 </ul>
 </div>
 </div>
@@ -266,7 +266,7 @@ Y &amp;\sim N_n(X \beta, \sigma^2 I_n)\\
 <h2 class="anchored" data-anchor-id="improper-uniform-priors">Improper uniform priors</h2>
 <p>In some cases we may wish to describe our ignorance a priori using a vague prior that plays a minimal role in the posterior distribution.</p>
 <p>A common trap is to imagine that a flat, or uniform prior is uninformative. However, we know that uniform priors <em>are often informative</em>. For example, you showed on a previous homework that a uniform prior on binary probability of success <span class="math inline">\(\theta\)</span> is informative on the log-odds <span class="math inline">\(\log \left(\frac{\theta}{(1-\theta)}\right)\)</span>.</p>
-<p>However, when a uniform prior is improper, it is informative because it states that most of the mass is infinitely far away.</p>
+<p>However, when a uniform prior is improper, it is informative because it states that most of the mass is infinitely far away from any bounded region.</p>
 <section id="example-2" class="level4">
 <h4 class="anchored" data-anchor-id="example-2">Example:</h4>
 <p><span class="math display">\[
@@ -329,7 +329,7 @@ I(\theta) = -E\left[\frac{\partial^2}{\partial\theta^2} \log p(Y|\theta) | \thet
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p>Examine the prior under re-parameterization.</p>
-<p>Let <span class="math inline">\(\phi = \log \theta\)</span>. Then <span class="math inline">\(\log p(y | \phi) = y \phi - e^\phi\)</span>.</p>
+<p>Let <span class="math inline">\(\phi = \log \theta\)</span>. Then <span class="math inline">\(\log p(y | \phi) = y \phi - e^\phi + \log y!\)</span>.</p>
 <p><span class="math display">\[
 \begin{aligned}
 I(\phi) = -E\left[\frac{\partial^2}{\partial\phi^2} \log p(Y|\phi) | \phi \right] &amp;= -E\left[ -e^\phi |\phi\right]\\

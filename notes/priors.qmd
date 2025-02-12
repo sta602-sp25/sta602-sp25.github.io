@@ -44,7 +44,7 @@ A **unit information prior** is an improper, data-dependent prior that contains 
 
 $$
 \begin{aligned}
-Y &\sim N_n(X \beta, \sigma^2 I_n)\\
+Y | \beta, \sigma^2 &\sim N_n(X \beta, \sigma^2 I_n)\\
 \beta &\sim N_p(\beta_0, \Sigma_0)\\
 1/\sigma^2  &\sim \text{gamma}(\nu_0/2, \nu_0/2 \sigma_0^2)
 \end{aligned}
@@ -75,14 +75,14 @@ Let $Y_1,\ldots,Y_n \sim \text{iid } p(y|\theta)$. Let $l(\theta | y_1,\ldots,y_
 
 2. Compute the negative of the curvature of the log-likelihood: $J(\theta) = - \frac{\partial^2}{\partial \theta^2} l(\theta | y_1,\ldots, y_n)$.
 
-3. Center the prior on the MLE, and let the curvature of the prior be $- \frac{\partial^2}{\partial \theta^2} p(\theta) = J(\theta) / n$.
+3. Let the max of the prior be the MLE, and let the curvature of the prior be $- \frac{\partial^2}{\partial \theta^2} p(\theta) = J(\theta) / n$.
 
 ::: panel-tabset
 ## Exercise
 
 - Let $Y_1,\ldots,Y_n \sim \text{iid binary}(\theta)$. Find $\hat{\theta}_{MLE}$.
 
-- Find the unit information prior $p(\theta)$. Hint: find a density $p(\theta)$ such that $\log p(\theta) = l(\theta | y_1,\ldots,y_n) + c$ where $c$ is a constant that doesn't depend on $\theta$. 
+- Find the unit information prior $p(\theta)$. Hint: find a density $p(\theta)$ such that $\log p(\theta) = l(\theta | y_1,\ldots,y_n)/n + c$ where $c$ is a constant that doesn't depend on $\theta$. 
 :::
 
 ## Improper uniform priors
@@ -91,7 +91,7 @@ In some cases we may wish to describe our ignorance a priori using a vague prior
 
 A common trap is to imagine that a flat, or uniform prior is uninformative. However, we know that uniform priors *are often informative*. For example, you showed on a previous homework that a uniform prior on binary probability of success $\theta$ is informative on the log-odds $\log \left(\frac{\theta}{(1-\theta)}\right)$. 
 
-However, when a uniform prior is improper, it is informative because it states that most of the mass is infinitely far away.
+However, when a uniform prior is improper, it is informative because it states that most of the mass is infinitely far away from any bounded region.
 
 #### Example:
 
@@ -153,7 +153,7 @@ Therefore, $J(\theta) \propto \theta^{-1/2}$.
 
 Examine the prior under re-parameterization. 
 
-Let $\phi = \log \theta$. Then $\log p(y | \phi) = y \phi - e^\phi$.
+Let $\phi = \log \theta$. Then $\log p(y | \phi) = y \phi - e^\phi + \log y!$.
 
 $$
 \begin{aligned}

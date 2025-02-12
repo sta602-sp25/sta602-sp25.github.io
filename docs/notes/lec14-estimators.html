@@ -393,7 +393,7 @@ MSE[\hat{\theta}|\theta_0] &amp;= E[(\hat{\theta} - \theta_0)^2 | \theta_0]\\
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Exercise 4</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
-<p>Suppose you know that you know Gentoo penguins are closely related to Chinstrap penguins. Previously, you’ve measured the bill length of three Gentoo penguins and found their mean bill length to be 46.2. Accordingly, you set <span class="math inline">\(\mu_0 = 46.2\)</span>.</p>
+<p>Suppose you know Gentoo penguins are closely related to Chinstrap penguins. Previously, you’ve measured the bill length of three Gentoo penguins and found their mean bill length to be 46.2. Accordingly, you set <span class="math inline">\(\mu_0 = 46.2\)</span>.</p>
 <!-- # ```{r} -->
 <!-- # set.seed(360) -->
 <!-- # penguins %>% -->
@@ -402,10 +402,10 @@ MSE[\hat{\theta}|\theta_0] &amp;= E[(\hat{\theta} - \theta_0)^2 | \theta_0]\\
 <!-- #   summarize(mean(bill_length_mm)) %>% -->
 <!-- #   pull() -->
 <!-- # ``` -->
-<p>Suppose (for illustrative purposes) that you <em>know</em> the true population mean and variance for Chinstrap penguin bill length,</p>
+<p>For illustrative purposes, we’ll pretend we know the true population mean and variance for Chinstrap penguin bill length</p>
 <p><span class="math display">\[
 \begin{aligned}
-\theta_0 &amp;= 48.8\\
+\theta_0 &amp;= 48.5\\
 \sigma^2 &amp;= 3.3.
 \end{aligned}
 \]</span> <!-- # ```{r} --> <!-- # penguins %>% --> <!-- #   filter(species == "Chinstrap") %>% --> <!-- #   summarize(mean(bill_length_mm), --> <!-- #             sd(bill_length_mm)) --> <!-- # ``` --></p>
@@ -434,7 +434,7 @@ MSE[\hat{\theta}|\theta_0] &amp;= E[(\hat{\theta} - \theta_0)^2 | \theta_0]\\
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>MSE_bayesian <span class="ot">=</span> <span class="cf">function</span>(k0, n) {</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">=</span> n <span class="sc">/</span> (k0 <span class="sc">+</span> n)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  (w<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sigma2 <span class="sc">/</span> n) <span class="sc">+</span> (((<span class="dv">1</span><span class="sc">-</span>w) <span class="sc">*</span> (<span class="fl">46.2</span> <span class="sc">-</span> <span class="fl">48.8</span>))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  (w<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sigma2 <span class="sc">/</span> n) <span class="sc">+</span> (((<span class="dv">1</span><span class="sc">-</span>w) <span class="sc">*</span> (<span class="fl">46.2</span> <span class="sc">-</span> <span class="fl">48.5</span>))<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>MSE_ratio <span class="ot">=</span> <span class="cf">function</span>(k0, n) {</span>
