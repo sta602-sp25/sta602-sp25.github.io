@@ -46,7 +46,7 @@ $$
 \begin{aligned}
 Y | \beta, \sigma^2 &\sim N_n(X \beta, \sigma^2 I_n)\\
 \beta &\sim N_p(\beta_0, \Sigma_0)\\
-1/\sigma^2  &\sim \text{gamma}(\nu_0/2, \nu_0/2 \sigma_0^2)
+1/\sigma^2  &\sim \text{gamma}(\nu_0/2, \nu_0 \sigma_0^2 /2)
 \end{aligned}
 $$
 
