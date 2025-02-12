@@ -2203,5 +2203,26 @@
     "title": "Normal modeling &\nBayesian estimators",
     "section": "Solution 2",
     "text": "Solution 2\n\\[\n\\begin{aligned}\n\\hat{\\theta}_{MLE} &= \\bar{Y} = \\frac{1}{n}\\sum_{i=1}^n Y_i\\\\\n\\hat{\\theta}_B &= \\frac{n\\bar{y}+a}{n+a+b} =\n\\end{aligned}\n\\]\n\\[\n\\begin{aligned}\nMSE(\\hat{\\theta}_{MLE}|\\theta) &= \\frac{\\theta(1-\\theta)}{n}\\\\\nMSE(\\hat{\\theta}_B|\\theta) &= \\frac{n}{n + a + b}\\bar{Y} + \\frac{a + b}{n + a + b} \\frac{a}{a + b} =  w \\bar{Y} + (1-w)\\frac{a}{a+b}\\\\\n&= w^2Var(\\bar{Y} | \\theta) +  (1-w)^2 \\left(\\frac{a}{a+b} - \\theta\\right)^2\\\\\n&= {w^2} \\frac{\\theta(1-\\theta)}{n} + (1-w)^2  \\left(\\frac{a}{a+b} - \\theta\\right)^2\n\\end{aligned}\n\\] For the Bayesian estimator to have smaller MSE than the MLE, we need\n\\[\n\\begin{aligned}\n\\left(\\frac{a}{a+b} - \\theta\\right)^2 &\\leq \\frac{\\theta(1 - \\theta)}{n} \\frac{1 + w}{1 - w}\\\\\n&\\leq \\frac{\\theta(1 - \\theta) (2n + a + b)}{n(a+b)}\n\\end{aligned}\n\\]\nIn words, if our prior guess \\(a / (a+b)\\) is “close enough” to \\(\\theta\\), where “close enough” is defined by the inequality above and is proportional to the variance of the estimator, then the MSE of the Bayesian estimator is smaller.\n\n\n\n🔗 sta602-sp25.github.io"
+  },
+  {
+    "objectID": "slides/jeffreys-prior-lab.html#exercise",
+    "href": "slides/jeffreys-prior-lab.html#exercise",
+    "title": "Jeffreys prior",
+    "section": "Exercise",
+    "text": "Exercise\nShow that the Jeffreys prior for the normal model is \\(p_J(\\theta, \\sigma^2) \\propto (\\sigma^2)^{-3/2}\\).\nNote: our sampling model has two unknowns. Let \\(\\Psi = (\\theta, \\sigma^2)\\). Then \\(p_J(\\Psi) \\propto \\sqrt{|I(\\Psi)|}\\) where \\(|I(\\Psi)|\\) is the determinant of the \\(2 \\times 2\\) Hessian matrix."
+  },
+  {
+    "objectID": "slides/jeffreys-prior-lab.html#solution",
+    "href": "slides/jeffreys-prior-lab.html#solution",
+    "title": "Jeffreys prior",
+    "section": "Solution",
+    "text": "Solution\nIn lab."
+  },
+  {
+    "objectID": "slides/jeffreys-prior-lab.html#exam-prep",
+    "href": "slides/jeffreys-prior-lab.html#exam-prep",
+    "title": "Jeffreys prior",
+    "section": "Exam prep",
+    "text": "Exam prep\nReview chapter summaries.\n\n\n\n🔗 sta602-sp25.github.io"
   }
 ]

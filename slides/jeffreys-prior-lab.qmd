@@ -1,0 +1,21 @@
+---
+title: "Jeffreys prior"
+format: 
+    revealjs:
+      mainfont: Lato
+      smaller: true
+---
+
+## Exercise 
+
+Show that the Jeffreys prior for the normal model is $p_J(\theta, \sigma^2) \propto (\sigma^2)^{-3/2}$.
+
+Note: our sampling model has *two unknowns*. Let $\Psi = (\theta, \sigma^2)$. Then $p_J(\Psi) \propto \sqrt{|I(\Psi)|}$ where $|I(\Psi)|$ is the determinant of the $2 \times 2$ Hessian matrix.
+
+## Solution
+
+In lab. 
+
+## Exam prep
+
+Review [chapter summaries](/chapterSummaries.html).
