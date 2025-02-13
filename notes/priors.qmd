@@ -61,7 +61,7 @@ $$
 \end{aligned}
 $$
 
-This is using the MLE (or equivalently OLS estimator) as 'unit information'. Notice $\beta_0 = \hat{\beta}_{OLS}$ and the variance $\Sigma_0$ is just 1/n the precision of the MLE: $\left(Var[\hat{\beta}_{OLS}]\right)^{-1}$.
+This is using the MLE (or equivalently OLS estimator) as 'unit information'. Notice $\beta_0 = \hat{\beta}_{OLS}$ and the precision $\Sigma_0^{-1}$ is just 1/n the precision of the MLE: $\left(Var[\hat{\beta}_{OLS}]\right)^{-1}$.
 
 Similarly, $\nu_0 = 1$ (implying unit information) and $\sigma_0^2$ is the MLE of $\sigma^2$.
 
@@ -75,7 +75,7 @@ Let $Y_1,\ldots,Y_n \sim \text{iid } p(y|\theta)$. Let $l(\theta | y_1,\ldots,y_
 
 2. Compute the negative of the curvature of the log-likelihood: $J(\theta) = - \frac{\partial^2}{\partial \theta^2} l(\theta | y_1,\ldots, y_n)$.
 
-3. Let the max of the prior be the MLE, and let the curvature of the prior be $- \frac{\partial^2}{\partial \theta^2} p(\theta) = J(\theta) / n$.
+3. Let the max of the prior be the MLE, and let the curvature of the prior be $J(\theta) / n$.
 
 ::: panel-tabset
 ## Exercise
