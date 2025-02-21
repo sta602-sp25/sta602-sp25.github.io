@@ -85,8 +85,8 @@ schedule %>%
 |  | Fri Feb 14 | review |  |  |  |
 | 7 | Mon Feb 17 | Jeffreys prior; exam review |  | [💻](/slides/jeffreys-prior-lab.html) |  |
 |  | Wed Feb 19 | Exam I |  |  |  |
-|  | Fri Feb 21 | Metropolis algorithm |  |  |  |
-| 8 | Mon Feb 24 |  |  |  |  |
+|  | Fri Feb 21 | Metropolis algorithm |  | [🗒](/notes/lec08-Metropolis-algorithm.html) |  |
+| 8 | Mon Feb 24 | lab: Metropolis algo. |  | 💻 |  |
 |  | Wed Feb 26 | MCMC diagnostics |  |  |  |
 |  | Fri Feb 28 | diagnostics and MH |  |  |  |
 | 9 | Mon Mar 03 |  |  |  |  |
