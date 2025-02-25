@@ -85,21 +85,21 @@ schedule %>%
 |  | Fri Feb 14 | review |  |  |  |
 | 7 | Mon Feb 17 | Jeffreys prior; exam review |  | [💻](/slides/jeffreys-prior-lab.html) |  |
 |  | Wed Feb 19 | Exam I |  |  |  |
-|  | Fri Feb 21 | Metropolis algorithm |  | [🗒](/notes/lec08-Metropolis-algorithm.html) |  |
+|  | Fri Feb 21 | Metropolis algorithm | Ch. 10 | [🗒](/notes/lec08-Metropolis-algorithm.html) |  |
 | 8 | Mon Feb 24 | lab: Metropolis algo. |  | [💻](/slides/lab9-MH-MCMC.html) |  |
-|  | Wed Feb 26 | MCMC diagnostics |  |  |  |
-|  | Fri Feb 28 | diagnostics and MH |  |  |  |
-| 9 | Mon Mar 03 |  |  |  |  |
-|  | Wed Mar 05 | Gibbs sampling |  |  |  |
-|  | Fri Mar 07 | multivariate normal |  |  |  |
+|  | Wed Feb 26 | MCMC diagnostics | Ch. 6, 10 | [🗒](/notes/lec09-MCMC.html) | [hw 5](/hw/hw05.html) |
+|  | Fri Feb 28 | diagnostics and MH | Ch. 6, 10 |  |  |
+| 9 | Mon Mar 03 | lab: MCMC and conf. bands |  | [💻](/slides/lab-conf-band.html) |  |
+|  | Wed Mar 05 | Gibbs sampling | Ch. 6 |  |  |
+|  | Fri Mar 07 | multivariate normal | Ch. 7 |  |  |
 | 10 | Mon Mar 10 | NO CLASS |  |  |  |
 |  | Wed Mar 12 | NO CLASS |  |  |  |
 |  | Fri Mar 14 | NO CLASS |  |  |  |
 | 11 | Mon Mar 17 |  |  |  |  |
-|  | Wed Mar 19 | Bayesian regression I |  |  |  |
-|  | Fri Mar 21 | Bayesian regression II |  |  |  |
+|  | Wed Mar 19 | Bayesian regression I | Ch. 9 |  |  |
+|  | Fri Mar 21 | Bayesian regression II | Ch. 9 |  |  |
 | 12 | Mon Mar 24 |  |  |  |  |
-|  | Wed Mar 26 | hierarchical modeling |  |  |  |
+|  | Wed Mar 26 | hierarchical modeling | Ch. 8 |  |  |
 |  | Fri Mar 28 | review |  |  |  |
 | 13 | Mon Mar 31 |  |  |  |  |
 |  | Wed Apr 02 | Exam II |  |  |  |

@@ -421,7 +421,7 @@ Y_i | \beta_0, \beta_1, x_i &amp;\sim N(\beta_0 + \beta_1x_i, \sigma^2)\\
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># load the data</span></span>
-<span id="cb2-2"><a></a>YX <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://sta360-fa24.github.io/data/simulatedXY.csv"</span>)</span>
+<span id="cb2-2"><a></a>YX <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://sta602-sp25.github.io/data/simulatedXY.csv"</span>)</span>
 <span id="cb2-3"><a></a>y <span class="ot">=</span> YX<span class="sc">$</span>y</span>
 <span id="cb2-4"><a></a>x <span class="ot">=</span> YX<span class="sc">$</span>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1079,12 +1079,15 @@ p(\beta_1, \beta_2, \sigma^2 | y_1, \ldots, y_n, x_1, \ldots, x_n)
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -1095,13 +1098,6 @@ p(\beta_1, \beta_2, \sigma^2 | y_1, \ldots, y_n, x_1, \ldots, x_n)
               window.jQuery(currentSlide).trigger("shown");
             }
           }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
         }
 
         // hookup for slidy

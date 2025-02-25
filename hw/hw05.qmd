@@ -1,6 +1,6 @@
 ---
 title: "Homework 5"
-subtitle: "Due Wednesday October 23 at 5:00pm"
+subtitle: "Due Friday March 7 at 5:00pm"
 mainfont: Lato
 format: 
   html:
@@ -9,7 +9,7 @@ format:
 
 ## Exercise 1 
 
-You've been hired as a columnist to write for the statistics/mathematics section of an online magazine. Your editor knows you are enrolled in STA360 and has asked you to  write about the Metropolis algorithm for the magazine. Specifically, your editor tells you that your article should answer the following:
+You've been hired as a columnist to write for the statistics/mathematics section of an online magazine. Your editor knows you are enrolled in STA602 and has asked you to  write about the Metropolis algorithm for the magazine. Specifically, your editor tells you that your article should answer the following:
 
 1. What is the Metropolis algorithm? What is the history of the algorithm?
 
@@ -19,7 +19,7 @@ You've been hired as a columnist to write for the statistics/mathematics section
 
 4. What's the intuition behind why the algorithm works?
 
-Additionally, the editor adds: your article needs to be strictly under 500 words (the shorter the better). Furthermore, your target audience is non-technical. For this reason, you should avoid using unnecessary jargon. If/when you do use statistical terminology, you must define it.
+Additionally, the editor adds: your article needs to be strictly under 500 words (the shorter the better). Furthermore, your target audience has limited statistical background. For this reason, you should define all statistical terminology when you use it, in your own words.
 
 ## Exercise 2
 
@@ -28,7 +28,7 @@ Researchers have recorded the nesting success of 43 young male sparrows of the s
 
 ```{r}
 #| eval: false
-yXsparrow = readr::read_csv("https://sta360-fa24.github.io/data/yXsparrow.csv")
+yXsparrow = readr::read_csv("https://sta602-sp25.github.io/data/yXsparrow.csv")
 ```
 
 Let $Y_i$ be the binary indicator that sparrow $i$ successfully nests, and let $x_i$ denote their wingspan. Our model for $Y_i$ is logit $Pr(Y_i = 1 | \alpha, \beta, x_i) = \alpha + \beta x_i$, where the logit function is given by logit $\theta = \log \left[\frac{\theta}{(1 - \theta)} \right]$.
@@ -61,8 +61,8 @@ Code for this exercise is provided below,
 ```{r}
 #| eval: false
 # load the data
-trans.prob.mat = readRDS(url("https://sta360-fa24.github.io/data/trans-prob-mat.rds"))
-cipher_text = readLines("https://sta360-fa24.github.io/data/ciphertext.txt")
+trans.prob.mat = readRDS(url("https://sta602-sp25.github.io/data/trans-prob-mat.rds"))
+cipher_text = readLines("https://sta602-sp25.github.io/data/ciphertext.txt")
 
 pl = function(decoded) {
   logprob = 0
