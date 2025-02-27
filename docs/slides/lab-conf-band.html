@@ -493,8 +493,8 @@ p(\beta_1, \beta_2, \sigma^2 | y_1, \ldots, y_n, x_1, \ldots, x_n)
 <span id="cb3-58"><a></a>   <span class="do">### note: sigma2 is positive only, we want to only propose positive values</span></span>
 <span id="cb3-59"><a></a>   sigma2_proposal <span class="ot">=</span> <span class="dv">1</span> <span class="sc">/</span> <span class="fu">rgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> <span class="dv">1</span>, sigma2_s)</span>
 <span id="cb3-60"><a></a>   log.r <span class="ot">=</span> <span class="fu">logPosterior</span>(beta0_s, beta1_s, sigma2_proposal) <span class="sc">-</span> </span>
-<span id="cb3-61"><a></a>     <span class="fu">logPosterior</span>(beta0_s, beta1_s, sigma2_s) <span class="sc">+</span> </span>
-<span id="cb3-62"><a></a>     <span class="fu">dinvgamma</span>(sigma2_proposal, <span class="dv">1</span>, sigma2_s, <span class="at">log =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> </span>
+<span id="cb3-61"><a></a>     <span class="fu">logPosterior</span>(beta0_s, beta1_s, sigma2_s) <span class="sc">-</span> </span>
+<span id="cb3-62"><a></a>     <span class="fu">dinvgamma</span>(sigma2_proposal, <span class="dv">1</span>, sigma2_s, <span class="at">log =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
 <span id="cb3-63"><a></a>     <span class="fu">dinvgamma</span>(sigma2_s, <span class="dv">1</span>, sigma2_proposal, <span class="at">log =</span> <span class="cn">TRUE</span>) </span>
 <span id="cb3-64"><a></a>   </span>
 <span id="cb3-65"><a></a>   <span class="cf">if</span>(<span class="fu">log</span>(<span class="fu">runif</span>(<span class="dv">1</span>)) <span class="sc">&lt;</span> log.r)  {</span>
@@ -602,7 +602,7 @@ p(\beta_1, \beta_2, \sigma^2 | y_1, \ldots, y_n, x_1, \ldots, x_n)
 <span id="cb7-4"><a></a><span class="fu">apply</span>(parameterDF, <span class="dv">2</span>, effectiveSize)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   BETA0    BETA1   SIGMA2 
-20.70251 12.72726 40.55270 </code></pre>
+19.47526 11.66309 26.31348 </code></pre>
 </div>
 </div>
 </div>
@@ -668,8 +668,8 @@ p(\beta_1, \beta_2, \sigma^2 | y_1, \ldots, y_n, x_1, \ldots, x_n)
 <span id="cb9-58"><a></a>   <span class="do">### note: sigma2 is positive only, we want to only propose positive values</span></span>
 <span id="cb9-59"><a></a>   sigma2_proposal <span class="ot">=</span> <span class="dv">1</span> <span class="sc">/</span> <span class="fu">rgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> <span class="dv">1</span>, sigma2_s)</span>
 <span id="cb9-60"><a></a>   log.r <span class="ot">=</span> <span class="fu">logPosterior</span>(beta0_s, beta1_s, sigma2_proposal) <span class="sc">-</span> </span>
-<span id="cb9-61"><a></a>     <span class="fu">logPosterior</span>(beta0_s, beta1_s, sigma2_s) <span class="sc">+</span> </span>
-<span id="cb9-62"><a></a>     <span class="fu">dinvgamma</span>(sigma2_proposal, <span class="dv">1</span>, sigma2_s, <span class="at">log =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> </span>
+<span id="cb9-61"><a></a>     <span class="fu">logPosterior</span>(beta0_s, beta1_s, sigma2_s) <span class="sc">-</span> </span>
+<span id="cb9-62"><a></a>     <span class="fu">dinvgamma</span>(sigma2_proposal, <span class="dv">1</span>, sigma2_s, <span class="at">log =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> </span>
 <span id="cb9-63"><a></a>     <span class="fu">dinvgamma</span>(sigma2_s, <span class="dv">1</span>, sigma2_proposal, <span class="at">log =</span> <span class="cn">TRUE</span>) </span>
 <span id="cb9-64"><a></a>   </span>
 <span id="cb9-65"><a></a>   <span class="cf">if</span>(<span class="fu">log</span>(<span class="fu">runif</span>(<span class="dv">1</span>)) <span class="sc">&lt;</span> log.r)  {</span>
@@ -685,7 +685,7 @@ p(\beta_1, \beta_2, \sigma^2 | y_1, \ldots, y_n, x_1, \ldots, x_n)
 <span id="cb9-75"><a></a><span class="fu">apply</span>(parameterDF, <span class="dv">2</span>, effectiveSize)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   BETA0    BETA1   SIGMA2 
-405.7465 241.8751 826.7580 </code></pre>
+939.9746 377.1986 580.0570 </code></pre>
 </div>
 </div>
 </div>
@@ -703,18 +703,18 @@ p(\beta_1, \beta_2, \sigma^2 | y_1, \ldots, y_n, x_1, \ldots, x_n)
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">beta0</td>
-<td style="text-align: left;">0.5</td>
-<td style="text-align: left;">(-1.1, 1.9)</td>
+<td style="text-align: left;">0.6</td>
+<td style="text-align: left;">(-0.4, 1.5)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">beta1</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">(-0.1, 2.5)</td>
+<td style="text-align: left;">(1.9, 2.1)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sigma2</td>
-<td style="text-align: left;">13.4</td>
-<td style="text-align: left;">(7.3, 2537295.4)</td>
+<td style="text-align: left;">11.6</td>
+<td style="text-align: left;">(7.1, 20.6)</td>
 </tr>
 </tbody>
 </table>

@@ -117,8 +117,8 @@ for (s in 1:S) {
    ### note: sigma2 is positive only, we want to only propose positive values
    sigma2_proposal = 1 / rgamma(1, shape = 1, sigma2_s)
    log.r = logPosterior(beta0_s, beta1_s, sigma2_proposal) - 
-     logPosterior(beta0_s, beta1_s, sigma2_s) + 
-     dinvgamma(sigma2_proposal, 1, sigma2_s, log = TRUE) - 
+     logPosterior(beta0_s, beta1_s, sigma2_s) - 
+     dinvgamma(sigma2_proposal, 1, sigma2_s, log = TRUE) +
      dinvgamma(sigma2_s, 1, sigma2_proposal, log = TRUE) 
    
    if(log(runif(1)) < log.r)  {
@@ -306,8 +306,8 @@ for (s in 1:S) {
    ### note: sigma2 is positive only, we want to only propose positive values
    sigma2_proposal = 1 / rgamma(1, shape = 1, sigma2_s)
    log.r = logPosterior(beta0_s, beta1_s, sigma2_proposal) - 
-     logPosterior(beta0_s, beta1_s, sigma2_s) + 
-     dinvgamma(sigma2_proposal, 1, sigma2_s, log = TRUE) - 
+     logPosterior(beta0_s, beta1_s, sigma2_s) - 
+     dinvgamma(sigma2_proposal, 1, sigma2_s, log = TRUE) + 
      dinvgamma(sigma2_s, 1, sigma2_proposal, log = TRUE) 
    
    if(log(runif(1)) < log.r)  {
