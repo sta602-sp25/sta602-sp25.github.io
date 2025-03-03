@@ -1201,7 +1201,7 @@
     "href": "quizzes.html",
     "title": "STA 360: Quizzes",
     "section": "",
-    "text": "Quiz 7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBonus quiz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Quiz 7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz 1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBonus quiz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "readings/readHMC.html",
@@ -2067,7 +2067,7 @@
   {
     "objectID": "quizzes/quiz06.html",
     "href": "quizzes/quiz06.html",
-    "title": "Quiz 6",
+    "title": "Quiz 5",
     "section": "",
     "text": "To receive credit for this assignment, write your full name at the top of your paper.\n\nExercise 1\nLet \\(\\mathbf{y} =  \\left[ {\\begin{array}{cc}\n   y_1 \\\\\n   y_2\n  \\end{array} } \\right]\\), \\(\\boldsymbol{\\theta} =  \\left[ {\\begin{array}{cc}\n   4 \\\\\n   8\n  \\end{array} } \\right]\\), \\(\\Sigma =  \\left[ {\\begin{array}{cc}\n   1 & .2 \\\\\n   .2 & 1.3\\\\\n  \\end{array} } \\right]\\).\nIf \\(\\mathbf{y} | \\boldsymbol{\\theta}, \\Sigma \\sim MVN(\\boldsymbol{\\theta}, \\Sigma)\\), then \\(y_1 \\sim N(a, b)\\). What is \\(a\\) and \\(b\\)?\n\n\nExercise 2\n\\(\\mathbf{x}\\) is a \\(p \\times 1\\) vector.\nWhat is the dimension of \\(\\mathbf{x}^T \\Sigma \\mathbf{x}\\)?\n\n\nExercise 3\n\\(\\mathbf{x}\\) is a \\(p \\times 1\\) vector.\nWhat is the dimension of \\(Var[\\mathbf{x}]\\)?\n\n\n\n−+\n03:00"
   },
@@ -2076,7 +2076,7 @@
     "href": "quizzes/quiz05.html",
     "title": "Quiz 5",
     "section": "",
-    "text": "To receive credit for this assignment, write your full name at the top of your paper.\n\nExercise 1\nLet \\(\\theta\\) be a positive random variable. In the first 100 states of a Markov chain we sample \\(\\theta \\in (0, 5)\\), then for states 100 through S we sample \\(\\theta\\) values \\(\\in\\) \\((5, \\infty)\\) for all S. This Markov chain is not ____. (Choose one of the following to fill in the blank: aperiodic, irreducible, recurrent).\n\n\nExercise 2\nWrite down the two distributions you need to be able to sample from to write a Gibbs sampler for the following target: \\(p(\\beta_1, \\beta_2 | y_1, \\ldots, y_n)\\).\n\n\nExercise 3\nWhich traceplot reveals a Markov chain that hast not reached stationarity?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n−+\n03:00"
+    "text": "To receive credit for this assignment, write your full name at the top of your paper.\n\nExercise 1\nLet \\(\\mathbf{y} =  \\left[ {\\begin{array}{cc}\n   y_1 \\\\\n   y_2\n  \\end{array} } \\right]\\), \\(\\boldsymbol{\\theta} =  \\left[ {\\begin{array}{cc}\n   4 \\\\\n   8\n  \\end{array} } \\right]\\), \\(\\Sigma =  \\left[ {\\begin{array}{cc}\n   1 & .2 \\\\\n   .2 & 1.3\\\\\n  \\end{array} } \\right]\\).\nIf \\(\\mathbf{y} | \\boldsymbol{\\theta}, \\Sigma \\sim MVN(\\boldsymbol{\\theta}, \\Sigma)\\), then \\(y_1 \\sim N(a, b)\\). What is \\(a\\) and \\(b\\)?\n\n\nExercise 2\n\\(\\mathbf{x}\\) is a \\(p \\times 1\\) vector.\nWhat is the dimension of \\(\\mathbf{x}^T \\Sigma \\mathbf{x}\\)?\n\n\nExercise 3\n\\(\\mathbf{x}\\) is a \\(p \\times 1\\) vector.\nWhat is the dimension of \\(Var[\\mathbf{x}]\\)?\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "slides/lab-normal.html#exercise",
