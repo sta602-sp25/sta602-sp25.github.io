@@ -236,7 +236,7 @@ $$
   \end{array} } \right].
 $$
 
-### Key facts
+#### Key facts
 
 - $\by \in \mathbb{R}^p$ ; $\bt \in \mathbb{R}^p$; $\Sigma > 0$
 - $E[\by] = \bt$
@@ -385,7 +385,9 @@ p(\Sigma | \nu_0, S_0^{-1}) = \left[
 |\Sigma|^{-(\nu_0 + p + 1)/2} \times \exp \{ -\frac{1}{2}tr(S_0 \Sigma^{-1})\}.
 \end{aligned}
 $$
+
 #### Key facts
+
 - notice that the first line is the normalizing constant of the density
 - the support is $\Sigma > 0$ and $\Sigma$ symmetric $p \times p$ matrix. $\nu_0 \in \mathbb{N}^+$ and $\nu_0 \geq p$. $S_0$ is a $p \times p$ symmetric positive definite matrix.
 - if $\Sigma$ is inv-Wishart$(\nu_0, S_0^{-1})$ then $\Sigma^{-1}$ is Wishart$(\nu_0, S_0^{-1})$.
