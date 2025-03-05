@@ -90,7 +90,7 @@ schedule %>%
 |  | Wed Feb 26 | MCMC diagnostics | Ch. 6, 10 | [🗒](/notes/lec09-MCMC.html)[📝](/notes/ergodicMarkovChains.pdf) | [hw 5](/hw/hw05.html) |
 |  | Fri Feb 28 | Gibbs sampling | Ch. 6 | [🗒](/notes/lec10-gibbs-sampling.html) |  |
 | 9 | Mon Mar 03 | lab: MCMC and conf. bands |  | [💻](/slides/lab-conf-band.html) |  |
-|  | Wed Mar 05 | multivariate normal | Ch. 6 | [🗒](/notes/lec11-mvn.html) | hw 6 |
+|  | Wed Mar 05 | multivariate normal | Ch. 6 | [🗒](/notes/lec11-mvn.html) | [hw 6](/hw/hw06.html) |
 |  | Fri Mar 07 | Bayesian regression | Ch. 7, [background](/notes/lec12-regression-intro.html) | [🗒](/notes/lec13-BayesianRegression2.html) |  |
 | 10 | Mon Mar 10 | NO CLASS |  |  |  |
 |  | Wed Mar 12 | NO CLASS |  |  |  |
