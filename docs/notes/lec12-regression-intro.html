@@ -181,7 +181,10 @@ window.Quarto = {
   <li><a href="#normal-linear-regression-model" id="toc-normal-linear-regression-model" class="nav-link" data-scroll-target="#normal-linear-regression-model">Normal linear regression model</a></li>
   <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
   </ul></li>
-  <li><a href="#bayesian-regression" id="toc-bayesian-regression" class="nav-link" data-scroll-target="#bayesian-regression">Bayesian regression</a></li>
+  <li><a href="#bayesian-regression" id="toc-bayesian-regression" class="nav-link" data-scroll-target="#bayesian-regression">Bayesian regression</a>
+  <ul class="collapse">
+  <li><a href="#semi-conjugate-prior-specification" id="toc-semi-conjugate-prior-specification" class="nav-link" data-scroll-target="#semi-conjugate-prior-specification">semi-conjugate prior specification</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -362,8 +365,15 @@ Y = X \beta + \epsilon
 <p>Therefore,</p>
 <p><span class="math display">\[
 \mathbf{y} | X, \beta, \sigma^2 \sim MVN(X\beta, \sigma^2 I)
-\]</span> :::panel-tabset ## Exercise 3</p>
-<p>Show that <span class="math inline">\(Var(\hat{\beta}_{OLS} | \beta, \sigma^2) = \sigma^2(X^TX)^{-1}\)</span> under the normal model above. :::</p>
+\]</span></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Exercise 3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Show that <span class="math inline">\(Var(\hat{\beta}_{OLS} | \beta, \sigma^2) = \sigma^2(X^TX)^{-1}\)</span> under the normal model above.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -378,9 +388,9 @@ Hint
 </div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Exercise 4</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Exercise 4</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>What is <span class="math inline">\(\hat{\beta}_{MLE}\)</span>?</p>
 </div>
 </div>
@@ -414,7 +424,9 @@ y_i = \beta_1 + \beta_2x_1 + \beta_3 x_1^2 + \beta_4 \log x_1 + \beta_5 x_2 + \b
 \]</span> To make inference about our model parameters, we will construct a posterior distribution,</p>
 <p><span class="math display">\[
 p(\beta, \sigma^2 | \mathbf{y}, X) \propto \underbrace{ p(\mathbf{y}|X, \beta, \sigma^2)}_{likelihood} \underbrace{p(\beta, \sigma^2)}_{prior}
-\]</span> ### semi-conjugate prior specification</p>
+\]</span></p>
+<section id="semi-conjugate-prior-specification" class="level3">
+<h3 class="anchored" data-anchor-id="semi-conjugate-prior-specification">semi-conjugate prior specification</h3>
 <p>To setup Gibbs sampling, let’s consider independent semi-conjugate priors, i.e.&nbsp;assume <span class="math inline">\(p(\beta, \sigma^2) = p(\beta) p(\sigma^2)\)</span></p>
 <p>Before reading ahead, what do you think semi-conjugate priors will be for the parameters under the normal linear regression model?</p>
 <section id="semi-conjuate-prior-on-beta" class="level4">
@@ -452,10 +464,18 @@ p(\gamma | \mathbf{y}, X, \beta) &amp;\propto p( \mathbf{y} | X, \beta, \sigma^2
 &amp;\propto
 \text{gamma}([\nu_0 + n]/2, [\nu_0 \sigma_0^2 + SSR(\beta)]/2)
 \end{aligned}
-\]</span> :::panel-tabset ## Exercise 5</p>
-<p>Write out the pseudo-code of a Gibbs sampler that samples from <span class="math inline">\(p(\beta, \sigma^2| \mathbf{y}, X)\)</span>. :::</p>
+\]</span></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Exercise 5</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>Write out the pseudo-code of a Gibbs sampler that samples from <span class="math inline">\(p(\beta, \sigma^2| \mathbf{y}, X)\)</span>.</p>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 

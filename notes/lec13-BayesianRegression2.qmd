@@ -54,6 +54,7 @@ V = Var[\beta | \mathbf{y}, X, \sigma^2] &=
 \mathbf{m} = E[\beta | \mathbf{y}, X, \sigma^2] &= (\Sigma_0^{-1} + X^T X/ \sigma^2)^{-1}(\Sigma_0^{-1} \beta_0 + X^T\mathbf{y} / \sigma^2).
 \end{aligned}
 $$
+
 ### Diffuse prior
 
 To complete model specification, we must choose $\beta_0$, $\Sigma_0$, $\sigma_0^2$ and $\nu_0$.
@@ -70,6 +71,7 @@ $$
 1/\sigma^2 &\sim \text{gamma}(1, 10)
 \end{aligned}
 $$
+
 ## picture of prior
 
 ```{r}
@@ -244,6 +246,7 @@ p1 / p2 / p3
 
 Is flipper length or bill length a "more important" predictor of penguin body mass? Why?
 :::
+
 ### Visually
 
 For each iteration of our Gibbs sampler, we're sampling a hyperplane, i.e. a set of $\beta$s.
@@ -318,6 +321,7 @@ Bayesians obtain the same objective via the following prior on $\beta$,
 $$
 \beta | \sigma^2, \lambda \sim MVN(0, \sigma^2 I /\lambda)
 $$
+
 :::panel-tabset
 ## Exercise
 Show that $\hat{\beta}_{ridge} = E[\beta | \mathbf{y}, X, \sigma^2, \lambda] = ((X^TX) + \lambda I)^{-1} X^T \mathbf{y}$.

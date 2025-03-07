@@ -178,6 +178,7 @@ Therefore,
 $$
 \mathbf{y} | X, \beta, \sigma^2 \sim MVN(X\beta, \sigma^2 I)
 $$
+
 :::panel-tabset
 ## Exercise 3
 
@@ -229,6 +230,7 @@ To make inference about our model parameters, we will construct a posterior dist
 $$
 p(\beta, \sigma^2 | \mathbf{y}, X) \propto \underbrace{ p(\mathbf{y}|X, \beta, \sigma^2)}_{likelihood} \underbrace{p(\beta, \sigma^2)}_{prior}
 $$
+
 ### semi-conjugate prior specification 
 
 To setup Gibbs sampling, let's consider independent semi-conjugate priors, i.e. assume 
@@ -281,7 +283,8 @@ p(\gamma | \mathbf{y}, X, \beta) &\propto p( \mathbf{y} | X, \beta, \sigma^2) p(
 \text{gamma}([\nu_0 + n]/2, [\nu_0 \sigma_0^2 + SSR(\beta)]/2)
 \end{aligned}
 $$
-:::panel-tabset
+
+::: panel-tabset
 ## Exercise 5
 
 Write out the pseudo-code of a Gibbs sampler that samples from $p(\beta, \sigma^2| \mathbf{y}, X)$.
