@@ -142,7 +142,7 @@ fit1 = readRDS(url("https://sta602-sp25.github.io/data/spam-train-fit.rds"))
 
 **Examining the output**
 
-- Did `stan_glm` do what we think it did? Did the Markov chain converge? Which parameters, if any, have a posterior mean rounded to 0? 
+- Did `stan_glm` do what we think it did? Did the Markov chain converge? Which parameters, if any, have a 90% credible interval that covers 0?
 
 ::: panel-tabset
 
@@ -251,13 +251,17 @@ fit1 = stan_glm(type ~ ., data = spam_train,
 
 - ESS is high
 
-- `receive`, `report`, `num1999`, `capitalAve` 
+```{r}
+which(sign(posteriorCI[,1]) != sign(posteriorCI[,2]))
+```
+
+<!-- - `receive`, `report`, `num1999`, `capitalAve`  -->
 
 ## Exercise 3 Solution
 
-```{r}
-predicted_spam = posterior_predict(object = fit1, newdata = spam_test)
+<!-- predicted_spam = posterior_predict(object = fit1, newdata = spam_test) -->
 
+```{r}
 data.frame(y = spam_test$type, 
            yhat = predict(object = fit1, newdata = spam_test[,-1], type = "response")) %>%
   mutate(yhat = ifelse(yhat >= 0.5, 1, 0)) %>%

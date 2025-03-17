@@ -587,7 +587,7 @@ p(y_i =1 | x_i, \beta) = \theta_i\\
 <h2>Exercise 2</h2>
 <p><strong>Examining the output</strong></p>
 <ul>
-<li>Did <code>stan_glm</code> do what we think it did? Did the Markov chain converge? Which parameters, if any, have a posterior mean rounded to 0?</li>
+<li>Did <code>stan_glm</code> do what we think it did? Did the Markov chain converge? Which parameters, if any, have a 90% credible interval that covers 0?</li>
 </ul>
 <div class="panel-tabset">
 <ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">quick look</a></li><li><a href="#tabset-4-2">check priors</a></li><li><a href="#tabset-4-3">trace plots</a></li><li><a href="#tabset-4-4">marginal posteriors</a></li><li><a href="#tabset-4-5">plotting tips</a></li><li><a href="#tabset-4-6">get chain</a></li><li><a href="#tabset-4-7">summarize</a></li></ul>
@@ -924,18 +924,30 @@ capitalTotal         0.67337732      0.67245181   0.471182694  0.893198052</code
 <ul>
 <li><p>Trace plots look good, can look through more by subsetting others.</p></li>
 <li><p>ESS is high</p></li>
-<li><p><code>receive</code>, <code>report</code>, <code>num1999</code>, <code>capitalAve</code></p></li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">which</span>(<span class="fu">sign</span>(posteriorCI[,<span class="dv">1</span>]) <span class="sc">!=</span> <span class="fu">sign</span>(posteriorCI[,<span class="dv">2</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            make              all             mail          receive 
+               2                4               11               12 
+          people           report              you             labs 
+              14               15               20               31 
+          telnet           num857           num415          num1999 
+              32               33               35               38 
+          direct charRoundbracket       capitalAve 
+              41               51               56 </code></pre>
+</div>
+</div>
+<!-- - `receive`, `report`, `num1999`, `capitalAve`  -->
 </section>
 <section id="exercise-3-solution" class="slide level2">
 <h2>Exercise 3 Solution</h2>
+<!-- predicted_spam = posterior_predict(object = fit1, newdata = spam_test) -->
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>predicted_spam <span class="ot">=</span> <span class="fu">posterior_predict</span>(<span class="at">object =</span> fit1, <span class="at">newdata =</span> spam_test)</span>
-<span id="cb25-2"><a></a></span>
-<span id="cb25-3"><a></a><span class="fu">data.frame</span>(<span class="at">y =</span> spam_test<span class="sc">$</span>type, </span>
-<span id="cb25-4"><a></a>           <span class="at">yhat =</span> <span class="fu">predict</span>(<span class="at">object =</span> fit1, <span class="at">newdata =</span> spam_test[,<span class="sc">-</span><span class="dv">1</span>], <span class="at">type =</span> <span class="st">"response"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb25-5"><a></a>  <span class="fu">mutate</span>(<span class="at">yhat =</span> <span class="fu">ifelse</span>(yhat <span class="sc">&gt;=</span> <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb25-6"><a></a>  <span class="fu">count</span>(y, yhat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">data.frame</span>(<span class="at">y =</span> spam_test<span class="sc">$</span>type, </span>
+<span id="cb27-2"><a></a>           <span class="at">yhat =</span> <span class="fu">predict</span>(<span class="at">object =</span> fit1, <span class="at">newdata =</span> spam_test[,<span class="sc">-</span><span class="dv">1</span>], <span class="at">type =</span> <span class="st">"response"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a></a>  <span class="fu">mutate</span>(<span class="at">yhat =</span> <span class="fu">ifelse</span>(yhat <span class="sc">&gt;=</span> <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a></a>  <span class="fu">count</span>(y, yhat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  y yhat   n
 1 0    0 529
