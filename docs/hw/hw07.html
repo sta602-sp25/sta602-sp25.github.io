@@ -182,7 +182,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Homework 7</h1>
-<p class="subtitle lead">Due Friday November 8 at 5:00pm</p>
+<p class="subtitle lead">Due Friday March 28 at 5:00pm</p>
 </div>
 
 
@@ -211,7 +211,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
 <p>Ridge regression application: The data set <code>yX.diabetes.train</code> contains data on diabetes progression (first column) and 64 predictor variables. These data can be loaded with with command</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>yX<span class="ot">&lt;-</span><span class="fu">dget</span>(<span class="fu">url</span>(<span class="st">"https://sta360-fa24.github.io/data/yX.diabetes.train"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>yX<span class="ot">&lt;-</span><span class="fu">dget</span>(<span class="fu">url</span>(<span class="st">"https://sta602-sp25.github.io/data/yX.diabetes.train"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li><p>For each value of <span class="math inline">\(\lambda \in \{0, 1,  \ldots, 99, 100 \}\)</span> compute the estimator <span class="math inline">\(\hat{\beta}_{\lambda}\)</span> based on exercise 1 above. Visualize each <span class="math inline">\(\hat{\beta}\)</span> as a function of <span class="math inline">\(\lambda\)</span> (maybe using <code>matplot</code>). Describe any trend(s) you notice in the plots.</p></li>
@@ -219,7 +219,7 @@ window.Quarto = {
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>yX.diabetes.test<span class="ot">&lt;-</span><span class="fu">dget</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">url</span>(<span class="st">"https://sta360-fa24.github.io/data/yX.diabetes.test"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">url</span>(<span class="st">"https://sta602-sp25.github.io/data/yX.diabetes.test"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Use <code>yX.diabetes.test</code> to evaluate the predictive performance of each estimate you obtained in part a. Specifically, compute the predictive error sum of squares <span class="math inline">\(PSS(\lambda) = ||y_{test} - X_{test} \hat{\beta}_{\lambda}||^2\)</span> for each value of <span class="math inline">\(\lambda\)</span> (IMPORTANT: <span class="math inline">\(\hat{\beta}_{\lambda}\)</span> is obtained from the training data in part a, not the test data). Make a plot of PSS versus <span class="math inline">\(\lambda\)</span>. How good is the unbiased OLS estimate for prediction, relative to the other estimates?</p>
 <ol start="3" type="a">
@@ -231,7 +231,7 @@ window.Quarto = {
 <p>For this exercise, use the code below to load the data</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>yX <span class="ot">=</span> <span class="fu">readRDS</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">url</span>(<span class="st">"https://sta360-fa24.github.io/data/yXspectroscopy.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">url</span>(<span class="st">"https://sta602-sp25.github.io/data/yXspectroscopy.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Source separation: The first column y of the dataset <code>yXSS.rds</code> is the vectorization of a spectroscopy image of a water sample taken from the Neuse River in North Carolina. You can view the image with the following code: <code>y&lt;-yX[,1] ; image(matrix(y,151,43))</code>. The water sample is of unknown origin, but it is assumed that it is a mix of water from 9 different categories, whose average spectroscopy images are given by the remaining 9 columns <span class="math inline">\(X\)</span> of <code>yX</code>. You can view these images with the same code above, applied to each column of <span class="math inline">\(X\)</span>.</p>
 <ol type="a">
