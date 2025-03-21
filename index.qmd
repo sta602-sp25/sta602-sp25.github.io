@@ -96,12 +96,12 @@ schedule %>%
 |  | Wed Mar 12 | NO CLASS |  |  |  |
 |  | Fri Mar 14 | NO CLASS |  |  |  |
 | 11 | Mon Mar 17 | lab: rstanarm |  | [💻](/slides/lab8-rstan.html) |  |
-|  | Wed Mar 19 | hierarchical modeling | Ch. 9 |  [🗒](/notes/lec15-hierarchical-intro.html) | [hw 7](/hw/hw07.html) |
-|  | Fri Mar 21 |  | Ch. 9 |  |  |
+|  | Wed Mar 19 | hierarchical modeling | Ch. 9 | [🗒](/notes/lec15-hierarchical-intro.html) | [hw 7](/hw/hw07.html) |
+|  | Fri Mar 21 | model averaging | Ch. 9 sec. 3 | [🗒](/notes/BayesianModelAveraging.html) |  |
 | 12 | Mon Mar 24 |  |  |  |  |
-|  | Wed Mar 26 | model averaging | Ch. 8 |  |  |
+|  | Wed Mar 26 |  | Ch. 8 |  |  |
 |  | Fri Mar 28 | review |  |  |  |
-| 13 | Mon Mar 31 |  |  |  |  |
+| 13 | Mon Mar 31 | lab: exam review |  |  |  |
 |  | Wed Apr 02 | Exam II |  |  |  |
 |  | Fri Apr 04 | Hamiltonian Monte Carlo |  |  |  |
 | 14 | Mon Apr 07 |  |  |  |  |
