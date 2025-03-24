@@ -1,0 +1,19 @@
+{
+  "hash": "0315f530355e86ec86502658446ea0b8",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Probit regression\"\nformat: \n    revealjs:\n      mainfont: Lato\n      smaller: true\n---\n\n\n\n# Exercise\n\n6.3 from Hoff. You can simulate from a constrained normal distribution with mean `mean` and standard deviation `sd`, constrained to lie in the interval using the following function:\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrcnorm<-function(n, mean=0, sd=1, a=-Inf, b=Inf){\n  u = runif(n, pnorm((a - mean) / sd), pnorm((b - mean) / sd))\n  mean + (sd * qnorm(u))\n}\n```\n:::\n\n\n\nNote that you can use this function to simulate a vector of constrained normal random variables, each with a potentially different mean, standard deviation, and constraints.\n\nTo load the data for this exercise, run the code below\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndivorce = readr::read_csv(\"https://sta602-sp25.github.io/data/divorce.csv\")\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

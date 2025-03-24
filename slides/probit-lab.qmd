@@ -1,0 +1,27 @@
+---
+title: "Probit regression"
+format: 
+    revealjs:
+      mainfont: Lato
+      smaller: true
+---
+
+# Exercise
+
+6.3 from Hoff. You can simulate from a constrained normal distribution with mean `mean` and standard deviation `sd`, constrained to lie in the interval using the following function:
+
+```{r}
+rcnorm<-function(n, mean=0, sd=1, a=-Inf, b=Inf){
+  u = runif(n, pnorm((a - mean) / sd), pnorm((b - mean) / sd))
+  mean + (sd * qnorm(u))
+}
+```
+
+Note that you can use this function to simulate a vector of constrained normal random variables, each with a potentially different mean, standard deviation, and constraints.
+
+To load the data for this exercise, run the code below
+
+```{r}
+divorce = readr::read_csv("https://sta602-sp25.github.io/data/divorce.csv")
+```
+
