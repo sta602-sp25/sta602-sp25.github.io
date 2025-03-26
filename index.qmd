@@ -65,7 +65,7 @@ schedule %>%
 
 ::: heatMap
 | Week | Date | Topic | Reading | Notes | Assignment |
-|:---|:---|:---|:--:|:--:|:---|
+|:-----------|:-----------|:-----------|:----------:|:----------:|:-----------|
 | 1 | Wed Jan 08 | lab: welcome |  | [💻](/slides/lab0-welcome.html) | [hello R](/labs/lab0.html) |
 |  | Fri Jan 10 | intro, history, notation | Ch. 2 |  | [hw 0](/hw/hw00.html) |
 | 2 | Mon Jan 13 | lab: MLE |  | [💻](/slides/lab1.html) |  |
@@ -99,7 +99,7 @@ schedule %>%
 |  | Wed Mar 19 | hierarchical modeling | Ch. 8 | [🗒](/notes/lec15-hierarchical-intro.html) | [hw 7](/hw/hw07.html) |
 |  | Fri Mar 21 | model averaging | Ch. 9 sec. 3 | [🗒](/notes/BayesianModelAveraging.html) |  |
 | 12 | Mon Mar 24 | lab: probit regression |  | [💻](/slides/probit-lab.html) |  |
-|  | Wed Mar 26 |  |  |  |  |
+|  | Wed Mar 26 | mixed effects models | Ch. 11 | [.R](/notes/glm-mixed-effects-example.R) |  |
 |  | Fri Mar 28 | review |  |  |  |
 | 13 | Mon Mar 31 | lab: exam review |  |  |  |
 |  | Wed Apr 02 | Exam II |  |  |  |

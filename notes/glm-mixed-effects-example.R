@@ -1,3 +1,4 @@
+# From Hoff Ch 11.
 load("https:://sta602-sp25.github.io/data/tumorLocation.RData")
 Y<-tumorLocation
 xs<-seq(.05,1,by=.05)
@@ -117,3 +118,5 @@ for(s in 1:50000)
 
 colMeans(THETA.post)
 matrix(colMeans(SIGMA.post), nrow = 5, ncol = 5)
+
+apply(THETA.post, FUN = coda::effectiveSize, MARGIN = 2)
