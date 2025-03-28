@@ -91,15 +91,15 @@ schedule %>%
 |  | Fri Feb 28 | Gibbs sampling | Ch. 6 | [🗒](/notes/lec10-gibbs-sampling.html) |  |
 | 9 | Mon Mar 03 | lab: MCMC and conf. bands |  | [💻](/slides/lab-conf-band.html) |  |
 |  | Wed Mar 05 | multivariate normal | Ch. 6 | [🗒](/notes/lec11-mvn.html) | [hw 6](/hw/hw06.html) |
-|  | Fri Mar 07 | Bayesian regression | Ch. 7, [background](/notes/lec12-regression-intro.html) | [🗒](/notes/lec13-BayesianRegression2.html) |  |
+|  | Fri Mar 07 | Bayesian regression | Ch. 7, [background](/notes/lec12-regression-intro.html) | [🗒](/notes/lec13-BayesianRegression2.html)[📝](/notes/exp-power-priors.pdf) |  |
 | 10 | Mon Mar 10 | NO CLASS |  |  |  |
 |  | Wed Mar 12 | NO CLASS |  |  |  |
 |  | Fri Mar 14 | NO CLASS |  |  |  |
 | 11 | Mon Mar 17 | lab: rstanarm |  | [💻](/slides/lab8-rstan.html) |  |
-|  | Wed Mar 19 | hierarchical modeling | Ch. 8 | [🗒](/notes/lec15-hierarchical-intro.html) | [hw 7](/hw/hw07.html) |
+|  | Wed Mar 19 | hierarchical modeling | Ch. 8 | [🗒](/notes/lec15-hierarchical-intro.html)[📝](/notes/hierarchical-modeling.pdf) | [hw 7](/hw/hw07.html) |
 |  | Fri Mar 21 | model averaging | Ch. 9 sec. 3 | [🗒](/notes/BayesianModelAveraging.html) |  |
 | 12 | Mon Mar 24 | lab: probit regression |  | [💻](/slides/probit-lab.html) |  |
-|  | Wed Mar 26 | mixed effects models | Ch. 11 | [.R](/notes/glm-mixed-effects-example.R) |  |
+|  | Wed Mar 26 | mixed effects models | Ch. 11 | [📝](/notes/hierarchical-regression.pdf)[.R](/notes/glm-mixed-effects-example.R) |  |
 |  | Fri Mar 28 | review |  |  |  |
 | 13 | Mon Mar 31 | lab: exam review |  |  |  |
 |  | Wed Apr 02 | Exam II |  |  |  |

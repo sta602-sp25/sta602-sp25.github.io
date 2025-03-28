@@ -1,5 +1,5 @@
 # From Hoff Ch 11.
-load("https:://sta602-sp25.github.io/data/tumorLocation.RData")
+load(url("https://sta602-sp25.github.io/data/tumorLocation.RData"))
 Y<-tumorLocation
 xs<-seq(.05,1,by=.05)
 X<-cbind(rep(1,ncol(Y)),poly(xs,deg=4,raw=TRUE))
@@ -67,8 +67,8 @@ m<-nrow(Y) ; p<-ncol(X)
 ## priors
 BETA = NULL
 for(j in 1:21) {
-  m = glm(Y[j,] ~ 0+X, family="poisson")
-  BETA = rbind(BETA, m$coefficients)
+  m1 = glm(Y[j,] ~ 0+X, family="poisson")
+  BETA = rbind(BETA, m1$coefficients)
 }
 
 mu0 = colMeans(BETA)
