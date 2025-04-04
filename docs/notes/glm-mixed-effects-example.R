@@ -94,7 +94,7 @@ for(s in 1:50000)
   Sigma<-solve(iSigma) ; dSigma<-det(Sigma)
   for(j in 1:m)
   {
-    beta.p<-t(rmvnorm(1,BETA[j,],.5*Sigma))
+    beta.p<-t(rmvnorm(1,BETA[j,], .5*Sigma))
     
     lr<-sum( dpois(Y[j,],exp(X%*%beta.p),log=TRUE ) -
                dpois(Y[j,],exp(X%*%BETA[j,]),log=TRUE ) ) +
