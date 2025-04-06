@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>STA602 – Bayesian inverse problem practice</title>
+  <title>STA602 – Inverse problem</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -392,7 +392,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Bayesian inverse problem practice</h1>
+  <h1 class="title">Inverse problem</h1>
   <p class="subtitle">STA602 at Duke University</p>
 
 <div class="quarto-title-authors">
@@ -420,8 +420,8 @@
 <p>This equation can be solved analytically (which is what makes this a toy example),</p>
 <p><span class="math display">\[
 P(t) = \frac{K}{1 + Ae^{-rt}}
-\]</span></p>
-<p>where <span class="math inline">\(A = \frac{K - P_0}{P_0}\)</span> and <span class="math inline">\(P_0\)</span> is the initial population size at time 0.</p>
+\]</span> where <span class="math inline">\(A = \frac{K - P_0}{P_0}\)</span> and <span class="math inline">\(P_0\)</span> is the initial population size at time 0.</p>
+<p>But what if we could not solve solve the equation in closed form and, instead, could only simulate from the data generative model given a set of parameter values <span class="math inline">\(K\)</span>, <span class="math inline">\(r\)</span> and <span class="math inline">\(P(0)\)</span>.</p>
 </section>
 <section id="data" class="slide level2">
 <h2>Data</h2>
@@ -436,7 +436,7 @@ P(t) = \frac{K}{1 + Ae^{-rt}}
 <p>In the past, CFU are counted manually in a small pipetted sample and then the CFU per unit volume are multiplied by the total volume in the dish to estimate the total population size of bacteria at a given time <span class="math inline">\(t\)</span>.</p>
 <p>A new machine has been created to replace this mundane task by automating the counting of CFUs in a sample. The machine counts the bacteria in the dish every fifteen minutes since the start of the experiment. Data are provided below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>y <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa24.github.io/data/E_coli.csv"</span>)</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>y <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta602-sp25.github.io/data/E_coli.csv"</span>)</span>
 <span id="cb3-2"><a></a><span class="fu">glimpse</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 24
@@ -453,13 +453,12 @@ $ time &lt;dbl&gt; 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 21
 <p>We assume the machine has some normal measurement error that is proportional to the size of the population. Thus the data generative model is given by</p>
 <p><span class="math display">\[
 P(t) |r,K \sim N(f(\theta, t),\sigma^2 f(\theta, t))
-\]</span></p>
-<p>where <span class="math inline">\(f(\theta, t)\)</span> is computed by <code>populationFunction</code> on the previous slide.</p>
+\]</span> where <span class="math inline">\(f(\theta, t)\)</span> is computed by <code>populationFunction</code> on the previous slide.</p>
 </section>
 <section id="exercise" class="slide level2">
 <h2>Exercise</h2>
 <p>Your task is to determine the measurment error of the machine <span class="math inline">\(\sigma^2\)</span>.</p>
-<p>It is well known that E coli takes about 20 minutes in laboratory conditions to double in size. Given this, we’d expect <span class="math inline">\(r\)</span> to be about <span class="math inline">\(\frac{\log(2)}{20}\)</span>.</p>
+<p>It is well known that E coli takes about 20 <span class="math inline">\(\pm 2.5\)</span> minutes in laboratory conditions to double in size. Given this, we’d expect <span class="math inline">\(r\)</span> to be about <span class="math inline">\(\frac{\log(2)}{20}\)</span>.</p>
 <p>Furthermore, we know the carrying capacity of the petri dish is at least <span class="math inline">\(10^8\)</span> CFU.</p>
 <ol type="1">
 <li><p>Identify each unknown.</p></li>
@@ -797,12 +796,15 @@ for (i in 1:S) {
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
       // slide changes (different for each slide format).
       (function () {
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          // dispatch for htmlwidgets
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
           const event = window.document.createEvent("Event");
           event.initEvent("slideenter", true, true);
           window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
 
           // dispatch for shiny
           if (window.jQuery) {
@@ -813,13 +815,6 @@ for (i in 1:S) {
               window.jQuery(currentSlide).trigger("shown");
             }
           }
-        }
-
-        // hookup for reveal
-        if (window.Reveal) {
-          window.Reveal.addEventListener("slidechanged", function(event) {
-            fireSlideChanged(event.previousSlide, event.currentSlide);
-          });
         }
 
         // hookup for slidy

@@ -1,0 +1,50 @@
+---
+title: "MCMC and parameter transformations"
+format: 
+    revealjs:
+      mainfont: Lato
+      smaller: true
+---
+
+```{r}
+#| echo: false 
+#| warning: false
+library(tidyverse)
+```
+
+```{r}
+#| echo: false
+#| warning: false
+set.seed(602)
+group = c(rep(1, 10), rep(2, 8), rep(3, 13))
+n = length(group)
+df = data.frame(group)
+df = df %>%
+  mutate(y = ifelse(group == 1, rnorm(n, mean = 0, sd = 1), rnorm(n, mean = 2, sd = 1))) %>%
+  mutate(y = ifelse(group == 3, rnorm(n, mean = 3, sd = 1), y))
+```
+
+```{r}
+# S = 100
+# MU0
+# TAU
+# SIGMA2
+# SIGMA02
+# for (s in 1:S) {
+#   
+# }
+```
+## Exercise 1 
+
+```{r}
+glimpse(df)
+df %>%
+  count(group)
+```
+
+
+```{r}
+
+```
+
+

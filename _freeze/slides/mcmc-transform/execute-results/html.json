@@ -1,0 +1,17 @@
+{
+  "hash": "b274653102138fa59e878fb574f4923f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"MCMC and parameter transformations\"\nformat: \n    revealjs:\n      mainfont: Lato\n      smaller: true\n---\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# S = 100\n# MU0\n# TAU\n# SIGMA2\n# SIGMA02\n# for (s in 1:S) {\n#   \n# }\n```\n:::\n\n\n\n\n\n## Exercise 1 \n\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nglimpse(df)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\nRows: 31\nColumns: 2\n$ group <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3…\n$ y     <dbl> -1.32196275, -0.06394777, -1.01787434, -0.84159001, -0.75015035,…\n```\n\n\n:::\n\n```{.r .cell-code}\ndf %>%\n  count(group)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n  group  n\n1     1 10\n2     2  8\n3     3 13\n```\n\n\n:::\n:::\n\n::: {.cell}\n\n:::\n",
+    "supporting": [
+      "mcmc-transform_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
