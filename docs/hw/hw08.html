@@ -182,7 +182,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Homework 8</h1>
-<p class="subtitle lead">Due Friday November 22 at 5:00pm</p>
+<p class="subtitle lead">Due Wednesday April 16 at 5:00pm</p>
 </div>
 
 
@@ -201,74 +201,25 @@ window.Quarto = {
 
 <section id="exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
-<p>6.3 from Hoff. You can simulate from a constrained normal distribution with mean <code>mean</code> and standard deviation <code>sd</code>, constrained to lie in the interval <span class="math inline">\((a,b)\)</span> using the following function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rcnorm<span class="ot">&lt;-</span><span class="cf">function</span>(n, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>, <span class="at">a=</span><span class="sc">-</span><span class="cn">Inf</span>, <span class="at">b=</span><span class="cn">Inf</span>){</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">=</span> <span class="fu">runif</span>(n, <span class="fu">pnorm</span>((a <span class="sc">-</span> mean) <span class="sc">/</span> sd), <span class="fu">pnorm</span>((b <span class="sc">-</span> mean) <span class="sc">/</span> sd))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  mean <span class="sc">+</span> (sd <span class="sc">*</span> <span class="fu">qnorm</span>(u))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Note that you can use this function to simulate a vector of constrained normal random variables, each with a potentially different mean, standard deviation, and constraints.</p>
-<p>To load the data for this exercise, run the code below</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>divorce <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://sta360-fa24.github.io/data/divorce.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>10.1 from Hoff.</p>
 </section>
 <section id="exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
-<p>Weighted regression: Suppose <span class="math inline">\(y_i \sim N(\beta x_i, \sigma^2 / w_i)\)</span> independently for <span class="math inline">\(i = 1,\ldots n\)</span>, where <span class="math inline">\(x_1, \ldots, x_n\)</span> and <span class="math inline">\(w_1, \ldots w_n\)</span> are known scalars, and <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\sigma^2\)</span> are unknown.</p>
-<ol type="a">
-<li><p>Find the formula for the OLS estimator <span class="math inline">\(\hat{\beta}_{OLS}\)</span> and compute its variance <span class="math inline">\(V[\hat{\beta}_{OLS} | \beta, \sigma^2]\)</span>.</p></li>
-<li><p>Write out the sampling density <span class="math inline">\(p(y_1, \ldots, y_n | \sigma^2, \beta)\)</span> as a function of <span class="math inline">\(\beta\)</span> (i.e.&nbsp;the likelihood) and find the value of <span class="math inline">\(\beta\)</span> that maximizes this function (the MLE). Denote this maximizing value as <span class="math inline">\(\hat{\beta}_{MLE}\)</span>. Compute <span class="math inline">\(V[\hat{\beta}_{MLE}  | \beta, \sigma^2]\)</span> and compare it to that of <span class="math inline">\(\hat{\beta}_{OLS}\)</span>.</p></li>
-<li><p>Under the prior distribution <span class="math inline">\(\beta \sim N(0, \tau^2)\)</span>, find <span class="math inline">\(E[\beta | y_1, \ldots, y_n, \sigma^2]\)</span>. What does this estimator get close to as the prior precision goes to zero (<span class="math inline">\(\tau^2 \rightarrow \infty\)</span>)?</p></li>
-</ol>
+<p>8.1 from Hoff. Note there is a typo in this exercise. Every <span class="math inline">\(\theta_i\)</span> in the exercise prompt should be replaced by <span class="math inline">\(\theta_j\)</span>.</p>
 </section>
 <section id="exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
-<p>Handwritten digit classification. Data originally sourced from U.S. postal envelopes.</p>
-<p>Exercise inspired by <a href="https://hua-zhou.github.io">Prof.&nbsp;Hua Zhou’s</a> Biostat M280.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="imgs/handwritten_digits.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="453"></p>
-</figure>
-</div>
-<p>In this exercise, you will build a very simple Bayesian image classifier. Load the training and test data sets using the code below.</p>
+<p>8.3 from Hoff: find the problem setup (definitions of each Greek letter) on page 132 and 133 of the book. Also see, e.g.&nbsp;the <a href="https://sta602-sp25.github.io/notes/lec15-hierarchical-intro.html">notes on hierarchical modeling</a>.</p>
+<p>Run the code below to load the data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>yTrain <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://sta360-fa24.github.io/data/hw-digits-train.csv"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>yTest <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://sta360-fa24.github.io/data/hw-digits-test.csv"</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">assign</span>(<span class="fu">paste0</span>(<span class="st">"school"</span>, i), </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">read_csv</span>(<span class="fu">glue</span>(<span class="st">"https://sta602-sp25.github.io/data/school{i}.csv"</span>)))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The training data set contains 3822 images like the ones displayed above. Each image is a 32 x 32 bitmap, i.e.&nbsp;1024 pixels, where each pixel is either black (0) or white (1). The 1024 pixels are divided into 64 blocks of 4 x 4 pixels. Each digit in the data set is represented by a vector of these blocks <span class="math inline">\(\mathbf{x} = (x_1, \ldots, x_{64})\)</span> where each element is a count of the white pixels in a block (a number between 0 and 16).</p>
-<p>The 65th column of the data set (<code>id</code>) is the actual digit label.</p>
-<ol type="a">
-<li><p>How many of each digit are in the training data set? Create a histogram to show the distribution of <code>block10</code> white pixels for each digit. What do you notice?</p></li>
-<li><p>Assume each digit (i.e.&nbsp;each <code>id</code>) has its own multinomial data generative model. You can read about the multinomial distribution using <code>?rmultinom</code> in R.</p></li>
-</ol>
-<ul>
-<li><p>Write down the joint density for images with id “j”, <span class="math inline">\(\prod_{k = 1}^{n_j} p(\mathbf{x}_k^{(j)} | \boldsymbol{\pi}^{(j)})\)</span>. Here <span class="math inline">\(n_j\)</span> is the number of images of type <span class="math inline">\(j\)</span> and <span class="math inline">\(\boldsymbol{\pi}^{(j)} = \{\pi_1^{(j)}, \ldots, \pi_{64}^{(j)} \}\)</span></p></li>
-<li><p>How many total unknown parameters are in the complete joint density of all images?</p></li>
-</ul>
-<ol start="3" type="a">
-<li>The Dirichlet distribution is the multivariate generalization of the beta distribution. You can read more about it <a href="https://en.wikipedia.org/wiki/Dirichlet_distribution">here</a>. Place a Dirichlet prior on the probability parameters for each of your multinomial models in part b. Let the concentration parameters be all identically 1.</li>
-</ol>
-<ul>
-<li>Sample from the posterior using any method you choose and compute the posterior mean <span class="math inline">\(\hat{\boldsymbol{\pi}}^{(j)}\)</span> for each <span class="math inline">\(j\)</span>. Hint: you may need to look up how to sample from a Dirichlet distribution in R. You may do this manually or find a package with built-in functions.</li>
-</ul>
-<ol start="4" type="a">
-<li>For each image <span class="math inline">\(\mathbf{x}\)</span> in your testing data set, compute your predicted id according to <span class="math inline">\(\text{argmax}_{j}~~p(\mathbf{x}| \boldsymbol{\hat{\pi}}^{(j)})p(j)\)</span>, where <span class="math inline">\(p(j)\)</span> is the proportion of digit <span class="math inline">\(j\)</span> in the training set. Report the number of correct and incorrect classifications in your testing data set.</li>
-</ol>
-<!-- Let $j$ be the true digit the image depicts. -->
-<!-- For each digit $j$, we define a multinomial data generative process, -->
-<!-- $$ -->
-<!-- p(\mathbf{x}^{(j)} | \theta_1^{(j)}, \ldots, \theta^{(j)}_{64}) = \frac{|\mathbf{x}|!}{x_1!\cdot x_2! \cdots x_{64}!} \prod_{i=1}^{64} \left(\theta_i^{(j)}\right)^{x_i}, -->
-<!-- $$ -->
-<!-- where $|\mathbf{x}| = \sum_{i=1}^{64} x_i$. -->
-<!-- Write down the joint density of all the data using this notation. -->
-<!-- hierarchical modeling -->
-<!-- stan -->
 
 
 </section>

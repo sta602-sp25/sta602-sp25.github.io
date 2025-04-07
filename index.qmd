@@ -104,7 +104,7 @@ schedule %>%
 | 13 | Mon Mar 31 | lab: exam review |  |  |  |
 |  | Wed Apr 02 | Exam II |  |  |  |
 |  | Fri Apr 04 | Hamiltonian Monte Carlo | [📖](/readings/readHMC.html) | [🗒](/notes/HamiltonianMonteCarlo.html) |  |
-| 14 | Mon Apr 07 | lab: inverse problem |  | [💻](/slides/BayesianInverseProblem.html) |  |
+| 14 | Mon Apr 07 | lab: inverse problem |  | [💻](/slides/BayesianInverseProblem.html) | [hw 8](/hw/hw08.html) |
 |  | Wed Apr 09 | Bayesian inverse problems | [📖](https://www.pnas.org/doi/10.1073/pnas.2409983121) | [🗒](/notes/waterOnMars.html) |  |
 |  | Fri Apr 11 | Special topic |  |  |  |
 | 15 | Mon Apr 14 | final review |  |  |  |
