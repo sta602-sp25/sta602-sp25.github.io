@@ -62,7 +62,8 @@ for(s in 1:1000) {
   }
   
   ### save results
-  THETA<-rbind(THETA,theta) ; SIGMA<-rbind(SIGMA,c(Sigma))
+  THETA<-rbind(THETA,theta)
+  SIGMA<-rbind(SIGMA,c(Sigma))
   Y.MISS<-rbind(Y.MISS, Y.full[O==0] )
   ###
   
