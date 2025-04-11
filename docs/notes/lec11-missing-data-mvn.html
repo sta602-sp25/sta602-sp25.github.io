@@ -86,35 +86,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -215,7 +186,7 @@ window.Quarto = {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mvtnorm)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(monomvn)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coda)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta360-fa23.github.io/data/Pima.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta602-sp25.github.io/data/Pima.csv"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.matrix</span>() </span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(Y) <span class="ot">=</span> <span class="cn">NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -252,7 +223,6 @@ window.Quarto = {
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  Y.full[<span class="fu">is.na</span>(Y.full[,j]),j]<span class="ot">&lt;-</span><span class="fu">mean</span>(Y.full[,j],<span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Exercise: what does the code above set the starting values of <span class="math inline">\(\theta, \Sigma\)</span> and <span class="math inline">\(\textbf{Y}_{\text{mis}}\)</span> to?</p>
 <p>The Gibbs sampler.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Gibbs sampler</span></span>
@@ -314,6 +284,46 @@ window.Quarto = {
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(THETA, <span class="dv">2</span>, effectiveSize)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  879.4569 3680.4806 4411.2164 7721.7664</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(Y.MISS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1000   85</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Y.full[O<span class="sc">==</span><span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 126.25506 123.98171 124.44045 121.92996 124.40833 122.87647 124.11849
+ [8] 123.54032 123.57864 122.08530 123.52182 121.59455 123.61230 122.99975
+[15] 123.96761  70.25673  67.88764  69.89332  71.49032  67.84666  69.31349
+[22]  71.19893  67.81690  72.08724  70.86132  71.43687  68.35769  70.89384
+[29]  68.62426  68.53928  70.76449  68.65983  72.57560  71.60383  72.64136
+[36]  68.53272  70.32163  70.89731  29.39299  28.03125  30.71964  29.83477
+[43]  30.09059  28.98916  29.49473  28.39525  28.94822  26.55170  30.09608
+[50]  29.32164  29.26992  29.98390  29.18059  29.36147  30.25848  30.81954
+[57]  31.81830  26.58465  31.30332  28.66884  28.50655  30.81600  27.89186
+[64]  53.32361  26.43068  22.51842  35.80317  35.31909  26.72613  46.29420
+[71]  32.20344  54.88117  34.12143  33.32646  19.77442  11.01717  28.98513
+[78]  30.55393  39.83278  39.54806  31.88455  49.57550  30.99463  22.64213
+[85]  32.95415</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colMeans</span>(Y.MISS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 123.6265009 124.1522469 123.7591057 123.8430195 123.2981142 123.7894670
+ [7] 123.3886781 123.6109602 122.2823998 124.5707406 124.3578369 123.7959666
+[13] 123.4961049 123.9974250 124.1987660  68.3349431  81.7966309  70.0746897
+[19]  63.4242131  80.6082505  70.6097650  54.7497927  82.8137336  56.6322599
+[25]  63.1223908  61.8691848  75.6862458  65.0988129  77.1825494  73.5305605
+[31]  67.1996260  74.3883678  59.4553396  65.7072608  50.6538228  76.3208497
+[37]  68.0700136  68.6806646  41.6704818  31.4954643  25.3282427  28.1396930
+[43]  22.9643871  41.6891636  29.8708951  39.6493700  32.2126835  38.0533110
+[49]  23.8262296  32.5144569  29.0224806  30.8278187  33.7937619  31.2335147
+[55]  28.3195518   9.3344273   9.7105508  52.2851622   8.7675401  30.6492232
+[61]  35.4241505  22.0917849  31.4774383   0.5588827  39.7899568  43.1683314
+[67]  27.9607244  25.7967937  37.2265647   6.4189097  35.2219592  -5.2516621
+[73]  29.5200470  32.0867689  52.2927103  57.4036296  41.0613809  33.9735748
+[79]  16.6765549  17.5641605  27.4895836   2.4551375  29.2600808  50.3337440
+[85]  24.5771441</code></pre>
 </div>
 </div>
 

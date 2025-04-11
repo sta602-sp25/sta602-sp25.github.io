@@ -1,25 +1,6 @@
----
-title: "Inference under MVN with missing data"
-author: "Dr. Alexander Fisher"
-# mainfont: Lato
-format: 
-  html:
-    toc: true
----
+# MVN with missing data
+## From Hoff Ch. 7
 
-\newcommand{\bt}{\boldsymbol{\theta}}
-\newcommand{\by}{\boldsymbol{y}}
-\newcommand{\identity}{\boldsymbol{I}}
-\newcommand{\bz}{\boldsymbol{z}}
-
-## Example: precision medicine
-
-This example is from Hoff ch. 7. 
-
-Load libraries and data.
-
-```{r}
-#| warning: false
 library(tidyverse)
 library(mvtnorm)
 library(monomvn)
@@ -27,22 +8,7 @@ library(coda)
 Y = read_csv("https://sta602-sp25.github.io/data/Pima.csv") %>%
   as.matrix() 
 colnames(Y) = NULL
-```
 
-This data set contains 
-
-- `glu` blood plasma glucose concentration
-- `bp` diastolic blood pressure
-- `skin` skin fold thickness
-- `bmi` body mass index 
-
-for  200 women of Pima Indian heritage living near Phoenix, Arizona ([Smith et al, 1988](https://www.jstor.org/stable/40230137)). Some observations are missing.
-
-### Inference using Gibbs sampling
-
-Setup prior parameters and starting values.
-
-```{r}
 ## prior parameters
 n = nrow(Y); p = ncol(Y)
 # prior on theta
@@ -63,17 +29,13 @@ O = 1 * (!is.na(Y)) # indices for observe values of Y
 for(j in 1:p) {
   Y.full[is.na(Y.full[,j]),j]<-mean(Y.full[,j],na.rm=TRUE)
 } 
-```
 
-The Gibbs sampler.
-
-```{r}
 ### Gibbs sampler
 THETA <- SIGMA <- Y.MISS <- NULL
 set.seed(360)
 
 for(s in 1:1000) {
-
+  
   ###update theta
   ybar <- apply(Y.full, 2 , mean)
   Ln <- solve(solve(L0) + n * solve(Sigma))
@@ -91,11 +53,11 @@ for(s in 1:1000) {
     b <- (O[i, ] == 0)
     a <- (O[i, ] == 1)
     if( sum(b) != 0) {
-    iSa <- solve(Sigma[a, a])
-    beta.j <- Sigma[b, a] %*% iSa
-    s2.j   <- Sigma[b, b] - Sigma[b, a] %*% iSa %*% Sigma[a, b]
-    theta.j <- theta[b] + beta.j %*% (as.matrix(Y.full[i, a]) - theta[a])
-    Y.full[i, b] <- rmvnorm(1, theta.j, s2.j)
+      iSa <- solve(Sigma[a, a])
+      beta.j <- Sigma[b, a] %*% iSa
+      s2.j   <- Sigma[b, b] - Sigma[b, a] %*% iSa %*% Sigma[a, b]
+      theta.j <- theta[b] + beta.j %*% (as.matrix(Y.full[i, a]) - theta[a])
+      Y.full[i, b] <- rmvnorm(1, theta.j, s2.j)
     }
   }
   
@@ -103,19 +65,16 @@ for(s in 1:1000) {
   THETA<-rbind(THETA,theta) ; SIGMA<-rbind(SIGMA,c(Sigma))
   Y.MISS<-rbind(Y.MISS, Y.full[O==0] )
   ###
-
+  
   if(s %% 250 == 0 | s == 1) {
-  cat(s,theta,"\n")
+    cat(s,theta,"\n")
   }
 }
 
+## Summaries
+
 #### Posterior mean
 apply(THETA,2,mean)
-```
-
-```{r}
-#| echo: false
-#| eval: false
 
 # posterior mean correlation matrix
 COR <- array( dim=c(p,p,1000) )
@@ -126,19 +85,11 @@ for(s in 1:1000)
 }
 
 apply(COR,c(1,2),mean)
-```
 
-
-Effective sample size of `THETA`
-
-```{r}
 # effective sample size of THETA 
 apply(THETA, 2, effectiveSize)
-```
 
-```{r}
+# other summaries
 dim(Y.MISS)
 Y.full[O==0]
 colMeans(Y.MISS)
-```
-
