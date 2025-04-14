@@ -107,7 +107,7 @@ schedule %>%
 | 14 | Mon Apr 07 | lab: inverse problem |  | [💻](/slides/BayesianInverseProblem.html) | [hw 8](/hw/hw08.html) |
 |  | Wed Apr 09 | Bayesian inverse problems | [📖](https://www.pnas.org/doi/10.1073/pnas.2409983121) | [🗒](/notes/waterOnMars.html) |  |
 |  | Fri Apr 11 | missing data | Ch. 7 | [📝](/notes/mvn-missing-data-notes.pdf)[.R](/notes/mvn-missing-data.R) |  |
-| 15 | Mon Apr 14 | final review |  |  |  |
+| 15 | Mon Apr 14 | lab: office hours / final review |  |  |  |
 |  | Wed Apr 16 | practice for final |  |  |  |
 :::
 
