@@ -59,7 +59,7 @@ $$
 Y|\beta, z, \sigma^2 \sim N_n(XZ\beta, \sigma^2 I_n)
 $$
 
-where $Z = z I_p$ is a diagonal matrix.
+where $Z$ is a diagonal matrix with components $Z_{ii} = z_i$.
 
 ::: callout-note
 Each separate "model" $M$ is equivalent to a different vector $z$.
